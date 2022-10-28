@@ -12,7 +12,7 @@ def print_one(arg1):
 def print_none():
     print("I got nothin'.")
 
-print_two("Robson","Marinho")
+print_two("Fulano","Sincrano")
 print_two_again("Informática","Aplicada")
 print_one("Engenharia!")
 print_none()
