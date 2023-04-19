@@ -6,8 +6,8 @@
 
  
 
-name=input("What's your name? ")
+fulano=input("What's your name fulano? ")
 
-print("Hello, ", name)
+print("Hello, informatica aplicada", fulano)
 
 print("\n Press ctrl+R to run again")
