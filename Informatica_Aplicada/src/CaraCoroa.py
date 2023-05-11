@@ -4,13 +4,9 @@
 
 # Run the program here by typing "Ctrl R"
 
- 
-
 # Import all the functions of the "random" module
 
 from random import *
-
- 
 
 # n is the number of times the die is rolled
 
@@ -37,8 +33,6 @@ def coin_flip(n):
 # Print the total number of heads and tails
 
     print(n, "coin flips: Heads: ", heads, "Tails: ", tails)
-
- 
 
 print("\nPress the Var key and select 'coin_flip()'")
 
