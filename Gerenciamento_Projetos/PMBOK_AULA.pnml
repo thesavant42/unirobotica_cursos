@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="Untitled" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>PMBOK</text>
+    </name>
+    <page id="page0">
+      <name>
+        <text>GRUPOS</text>
+      </name>
+      <place id="id34">
+        <name>
+          <text>p34</text>
+        </name>
+        <graphics>
+          <position x="175" y="-43" />
+        </graphics>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="id2">
+        <name>
+          <text>EXECUÇÃO</text>
+        </name>
+        <graphics>
+          <position x="412" y="198" />
+        </graphics>
+      </place>
+      <place id="id1">
+        <name>
+          <text>PLANEJAMENTO</text>
+        </name>
+        <graphics>
+          <position x="139" y="202" />
+        </graphics>
+      </place>
+      <place id="id3">
+        <name>
+          <text>CONTROLE</text>
+        </name>
+        <graphics>
+          <position x="608" y="201" />
+        </graphics>
+      </place>
+      <place id="id4">
+        <name>
+          <text>ENCERRAMENTO</text>
+        </name>
+        <graphics>
+          <position x="373" y="298" />
+        </graphics>
+      </place>
+      <transition id="id5">
+        <name>
+          <text>t5</text>
+        </name>
+        <graphics>
+          <position x="141" y="139" />
+        </graphics>
+      </transition>
+      <transition id="id8">
+        <name>
+          <text>t8</text>
+        </name>
+        <graphics>
+          <position x="285" y="241" />
+        </graphics>
+      </transition>
+      <transition id="id11">
+        <name>
+          <text>t11</text>
+        </name>
+        <graphics>
+          <position x="282" y="173" />
+        </graphics>
+      </transition>
+      <transition id="id14">
+        <name>
+          <text>t14</text>
+        </name>
+        <graphics>
+          <position x="499" y="160" />
+        </graphics>
+      </transition>
+      <transition id="id15">
+        <name>
+          <text>t15</text>
+        </name>
+        <graphics>
+          <position x="503" y="241" />
+        </graphics>
+      </transition>
+      <transition id="id20">
+        <name>
+          <text>t20</text>
+        </name>
+        <graphics>
+          <position x="379" y="83" />
+        </graphics>
+      </transition>
+      <transition id="id23">
+        <name>
+          <text>t23</text>
+        </name>
+        <graphics>
+          <position x="571" y="293" />
+        </graphics>
+      </transition>
+      <transition id="id42">
+        <name>
+          <text>t42</text>
+        </name>
+        <graphics>
+          <position x="338" y="-42" />
+        </graphics>
+      </transition>
+      <transition id="id44">
+        <name>
+          <text>t44</text>
+        </name>
+        <graphics>
+          <position x="-20" y="-38" />
+        </graphics>
+      </transition>
+      <referencePlace id="id6.port0" ref="id28">
+        <name>
+          <text>INÍCIO</text>
+        </name>
+        <toolspecific tool="HiPS" version="1.2.23.316">
+          <initialMarking>
+            <text>0</text>
+          </initialMarking>
+          <capacity>
+            <text>0</text>
+          </capacity>
+        </toolspecific>
+        <graphics>
+          <position x="-19" y="44" />
+        </graphics>
+      </referencePlace>
+      <referencePlace id="id6.port1" ref="id40">
+        <name>
+          <text>FIM</text>
+        </name>
+        <toolspecific tool="HiPS" version="1.2.23.316">
+          <initialMarking>
+            <text>0</text>
+          </initialMarking>
+          <capacity>
+            <text>0</text>
+          </capacity>
+        </toolspecific>
+        <graphics>
+          <position x="145" y="48" />
+        </graphics>
+      </referencePlace>
+      <arc id="id7" source="id5" target="id1">
+        <graphics>
+          <position x="139" y="149" />
+          <position x="140" y="188" />
+        </graphics>
+      </arc>
+      <arc id="id9" source="id1" target="id8">
+        <graphics>
+          <position x="187" y="205" />
+          <position x="260" y="231" />
+        </graphics>
+      </arc>
+      <arc id="id10" source="id8" target="id2">
+        <graphics>
+          <position x="310" y="231" />
+          <position x="384" y="202" />
+        </graphics>
+      </arc>
+      <arc id="id12" source="id2" target="id11">
+        <graphics>
+          <position x="383" y="196" />
+          <position x="307" y="183" />
+        </graphics>
+      </arc>
+      <arc id="id13" source="id11" target="id1">
+        <graphics>
+          <position x="257" y="183" />
+          <position x="188" y="200" />
+        </graphics>
+      </arc>
+      <arc id="id16" source="id3" target="id14">
+        <graphics>
+          <position x="580" y="196" />
+          <position x="524" y="170" />
+        </graphics>
+      </arc>
+      <arc id="id17" source="id14" target="id2">
+        <graphics>
+          <position x="474" y="170" />
+          <position x="439" y="192" />
+        </graphics>
+      </arc>
+      <arc id="id18" source="id2" target="id15">
+        <graphics>
+          <position x="439" y="204" />
+          <position x="478" y="231" />
+        </graphics>
+      </arc>
+      <arc id="id19" source="id15" target="id3">
+        <graphics>
+          <position x="528" y="231" />
+          <position x="580" y="206" />
+        </graphics>
+      </arc>
+      <arc id="id21" source="id3" target="id20">
+        <graphics>
+          <position x="608" y="186" />
+          <position x="608" y="111" />
+          <position x="404" y="93" />
+        </graphics>
+      </arc>
+      <arc id="id22" source="id20" target="id1">
+        <graphics>
+          <position x="354" y="73" />
+          <position x="259" y="59" />
+          <position x="171" y="191" />
+        </graphics>
+      </arc>
+      <arc id="id24" source="id3" target="id23">
+        <graphics>
+          <position x="597" y="214" />
+          <position x="596" y="283" />
+        </graphics>
+      </arc>
+      <arc id="id25" source="id23" target="id4">
+        <graphics>
+          <position x="546" y="298" />
+          <position x="402" y="298" />
+        </graphics>
+      </arc>
+      <arc id="id33" source="id6.port1" target="id5">
+        <graphics>
+          <position x="145" y="62" />
+          <position x="145" y="129" />
+        </graphics>
+      </arc>
+      <arc id="id45" source="id34" target="id44">
+        <graphics>
+          <position x="151" y="-43" />
+          <position x="5" y="-43" />
+        </graphics>
+      </arc>
+      <arc id="id46" source="id44" target="id6.port0">
+        <graphics>
+          <position x="-19" y="-28" />
+          <position x="-19" y="30" />
+        </graphics>
+      </arc>
+      <arc id="id43" source="id4" target="id42">
+        <graphics>
+          <position x="401" y="303" />
+          <position x="432" y="319" />
+          <position x="668" y="316" />
+          <position x="661" y="-4" />
+          <position x="363" y="-32" />
+        </graphics>
+      </arc>
+      <arc id="id48" source="id42" target="id34">
+        <graphics>
+          <position x="313" y="-43" />
+          <position x="199" y="-43" />
+        </graphics>
+      </arc>
+    </page>
+    <page id="page1">
+      <name>
+        <text>INICIAÇÃO</text>
+      </name>
+      <place id="id28">
+        <name>
+          <text>INÍCIO</text>
+        </name>
+        <graphics>
+          <position x="116" y="270" />
+        </graphics>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="id29">
+        <name>
+          <text>TAP</text>
+        </name>
+        <graphics>
+          <position x="317" y="231" />
+        </graphics>
+      </place>
+      <place id="id30">
+        <name>
+          <text>STAKEHOLDERS</text>
+        </name>
+        <graphics>
+          <position x="317" y="306" />
+        </graphics>
+      </place>
+      <place id="id40">
+        <name>
+          <text>FIM</text>
+        </name>
+        <graphics>
+          <position x="539" y="258" />
+        </graphics>
+      </place>
+      <transition id="id27">
+        <name>
+          <text>t27</text>
+        </name>
+        <graphics>
+          <position x="344" y="152" />
+        </graphics>
+      </transition>
+      <transition id="id31">
+        <name>
+          <text>t31</text>
+        </name>
+        <graphics>
+          <position x="433" y="275" />
+        </graphics>
+      </transition>
+      <transition id="id32">
+        <name>
+          <text>t32</text>
+        </name>
+        <graphics>
+          <position x="197" y="266" />
+        </graphics>
+      </transition>
+      <arc id="id26" source="id27" target="id28">
+        <graphics>
+          <position x="319" y="162" />
+          <position x="171" y="163" />
+          <position x="129" y="257" />
+        </graphics>
+      </arc>
+      <arc id="id35" source="id28" target="id32">
+        <graphics>
+          <position x="145" y="270" />
+          <position x="172" y="270" />
+        </graphics>
+      </arc>
+      <arc id="id36" source="id32" target="id29">
+        <graphics>
+          <position x="222" y="256" />
+          <position x="289" y="235" />
+        </graphics>
+      </arc>
+      <arc id="id37" source="id32" target="id30">
+        <graphics>
+          <position x="222" y="276" />
+          <position x="289" y="302" />
+        </graphics>
+      </arc>
+      <arc id="id38" source="id30" target="id31">
+        <graphics>
+          <position x="345" y="303" />
+          <position x="408" y="285" />
+        </graphics>
+      </arc>
+      <arc id="id39" source="id29" target="id31">
+        <graphics>
+          <position x="345" y="236" />
+          <position x="408" y="265" />
+        </graphics>
+      </arc>
+      <arc id="id41" source="id31" target="id40">
+        <graphics>
+          <position x="458" y="265" />
+          <position x="510" y="260" />
+        </graphics>
+      </arc>
+      <arc id="id0" source="id40" target="id27">
+        <graphics>
+          <position x="539" y="244" />
+          <position x="540" y="175" />
+          <position x="369" y="162" />
+        </graphics>
+      </arc>
+    </page>
+  </net>
+</pnml>
