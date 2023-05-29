@@ -2,7 +2,7 @@
 # You also must start the string with the letter f for ”format”, as in f"Hello {somevar}". This little f before the " (double-quote) and the {} characters tell Python 3, 
 # ”Hey, this string needs to be formatted. Put these variables in there.”
 
-my_name = 'Robson Marinho' 
+my_name = 'Robson Marinho'
 my_age = 45 # not a lie 
 my_height = 1.80 # in meter 
 my_weight = 80 # lbs 
