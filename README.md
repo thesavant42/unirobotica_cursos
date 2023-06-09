@@ -1,2 +1,2 @@
 # Cursos
-Recursos de aula de cursos do prof. Dr. Robson Marinho
+Recursos de aula de cursos
