@@ -49,6 +49,15 @@ else:
 # Create a sample collection
 users = {'Hans': 'active', 'Éléonore': 'inactive', '景太郎': 'active'}
 
+'''se já viu como se cria um método na classe sabe que o primeiro parâmetro dele deve ser o self que é o parâmetro que receberá este objeto que está antes do ponto.
+
+var.index('André')
+
+é o equivalente a se escrever uma função assim:
+
+index(var, 'André')
+'''
+
 # Strategy:  Iterate over a copy
 for user, status in users.copy().items():
     if status == 'active':
