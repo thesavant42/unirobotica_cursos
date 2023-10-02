@@ -58,3 +58,9 @@ def get_neighbours_and_gradients(index, width, height, potential_field):
       neighbours_and_gradients.append([discrete_gradient, lower_right])
 
     return neighbours_and_gradients
+
+'''
+The function above takes as input: the index of the current grid cell, map width, map height, and the total potential field. An empty list named neighbours_and_gradients is created to keep all neighbor nodes with their respective discrete gradients. Next, each discrete gradient value is calculated one by one and pushed into neighbours_and_gradients along with the index of the neighboring grid cell located towards the corresponding direction.
+
+Finally, it returns neighbours_and_gradients
+'''
