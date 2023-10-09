@@ -1,6 +1,6 @@
 if True:
    print ("Answer")
    print ("True")
-   else:
+else:
       print ("Answer")
       print ("False")
