@@ -2,7 +2,6 @@
 import sys; x = 'foo'; sys.stdout.write(x + '\n') #multiple statements on a sigle line
 
 a = int(input("Informe um número entre 0 e 100: "))
-
 if a > 50:
     print ("O número ", a, " é maior que 50")
 elif a == 50:
@@ -14,8 +13,6 @@ else:
 def add(a, b):
     """Function to add the value of a and b"""
     return a+b
-
-print(add(5,8))
 
 print("\n",(add.__doc__))
 
