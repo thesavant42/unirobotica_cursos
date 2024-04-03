@@ -28,14 +28,16 @@ salario_bruto = valor_hora * qtd_horas
 inss = 10
 fgts = 11
 
+# se salario bruto menor igual 900
 if salario_bruto <= 900:
-    ir = 0
-elif 900 < salario_bruto <= 1500:
-    ir = 5
+    ir = 0 #se menor 900 atribui ir = 0
+elif 900 < salario_bruto <= 1500: # se salario bruto menor igual 1500
+    ir = 5 #se maior 900 menor igual 1500 atribui ir = 0
 elif 1500 < salario_bruto <= 2500:
-    ir = 10
+    ir = 10 #se maior 1500 menor igual 2500 atribui ir = 0
 else:
-    ir = 20
+    ir = 20 #se menor 900 atribui ir = 20
+
 
 valor_ir = salario_bruto * ir / 100
 valor_inss = salario_bruto * inss / 100
