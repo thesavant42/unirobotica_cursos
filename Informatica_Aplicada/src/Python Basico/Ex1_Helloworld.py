@@ -1,9 +1,7 @@
 #Aula1
 #Primeiro programa
 
-print("Hello, World!")
+print("Alo, Mundo!")
 
-print("Hello, Computação Aplicada!")
-
-
+print("Alo, Computação Aplicada!")
 
