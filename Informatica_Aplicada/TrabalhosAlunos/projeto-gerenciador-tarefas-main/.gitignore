@@ -1,0 +1,7 @@
+*.xlsx 
+.vscode
+__pycache__
+.venv
+*.db
+*.json
+user.json
