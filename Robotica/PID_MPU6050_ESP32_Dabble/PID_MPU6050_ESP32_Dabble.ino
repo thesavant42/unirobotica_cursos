@@ -50,17 +50,17 @@ const int leftMotorPin1 = 26;
 const int leftMotorPin2 = 27;
 
 // Velocidades base ajustadas para as rodas
-int baseMotorSpeedLeft = 100;  // Velocidade base inicial para a roda esquerda
-int baseMotorSpeedRight = 80;  // Velocidade base inicial para a roda direita
+int baseMotorSpeedLeft = 50;  // Velocidade base inicial para a roda esquerda
+int baseMotorSpeedRight = 50;  // Velocidade base inicial para a roda direita
 int rotationSpeed = 50;        // Velocidade reduzida para rotação
 
 // Constantes PID ajustadas para a roda esquerda
-float KpLeft = 4.5, KiLeft = 0.15, KdLeft = 2.8;  // Constantes ajustadas para melhorar a roda esquerda
+float KpLeft = 3.0, KiLeft = 0, KdLeft = 1.5;  // Constantes ajustadas para melhorar a roda esquerda
 float prevErrorYawLeft = 0;
 float integralYawLeft = 0;
 
 // Constantes PID ajustadas para a roda direita
-float KpRight = 3.0, KiRight = 0.05, KdRight = 2.5;  // Constantes ajustadas para a roda direita
+float KpRight = 3.0, KiRight = 0, KdRight = 1.5;  // Constantes ajustadas para a roda direita
 float prevErrorYawRight = 0;
 float integralYawRight = 0;
 
@@ -116,9 +116,13 @@ void loop() {
     targetYaw = currentYaw;  // Define o yaw de destino durante o movimento
     correctTrajectoryPID();  // Corrige a trajetória durante a movimentação
   } else if (GamePad.isLeftPressed()) {
-    rotateLeft();  // Rotação incremental para a esquerda
+     rotateLeft();
+     targetYaw -= 5;  // Define um valor de rotação desejada ao girar para a esquerda
+    correctRotationPID();  // Corrige a rotação usando PID para cada roda
   } else if (GamePad.isRightPressed()) {
-    rotateRight();  // Rotação incremental para a direita
+    rotateRight();
+    targetYaw += 5;  // Define um valor de rotação desejada ao girar para a direita
+    correctRotationPID();  // Corrige a rotação usando PID para cada roda
   } else {
     stopMotors();
   }
@@ -154,17 +158,28 @@ void stopMotors() {
   analogWrite(motorRightPWM, 0);
 }
 
-// Rotação incremental para a esquerda
-void rotateLeft() {
-  targetYaw -= 5;  // Define um valor de rotação desejada ao girar para a esquerda
-  correctRotationPID();  // Corrige a rotação usando PID para cada roda
-}
-
 // Rotação incremental para a direita
 void rotateRight() {
-  targetYaw += 5;  // Define um valor de rotação desejada ao girar para a direita
-  correctRotationPID();  // Corrige a rotação usando PID para cada roda
+  digitalWrite(leftMotorPin1, LOW);  // Esquerdo vai para trás
+  digitalWrite(leftMotorPin2, HIGH);
+  analogWrite(motorLeftPWM, rotationSpeed);
+
+  digitalWrite(rightMotorPin1, HIGH);  // Direito vai para frente
+  digitalWrite(rightMotorPin2, LOW);
+  analogWrite(motorRightPWM, rotationSpeed);
 }
+
+//// Rotação incremental para a esquerda
+void rotateLeft() {
+  digitalWrite(leftMotorPin1, HIGH);  // Esquerdo vai para frente
+  digitalWrite(leftMotorPin2, LOW);
+  analogWrite(motorLeftPWM, rotationSpeed);
+
+  digitalWrite(rightMotorPin1, LOW);  // Direito vai para trás
+  digitalWrite(rightMotorPin2, HIGH);
+  analogWrite(motorRightPWM, rotationSpeed);
+}
+
 
 // Função para corrigir a trajetória usando PID com os dados do MPU6050
 void correctTrajectoryPID() {
@@ -203,8 +218,8 @@ void correctTrajectoryPID() {
   float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
 
   // Limita as correções para evitar valores extremos
-  correctionYawLeft = constrain(correctionYawLeft, -20, 20);  // Correção ampliada para a roda esquerda
-  correctionYawRight = constrain(correctionYawRight, -10, 10);  // Correção mantida para a roda direita
+  correctionYawLeft = constrain(correctionYawLeft, -30, 30);  // Correção ampliada para a roda esquerda
+  correctionYawRight = constrain(correctionYawRight, -30, 30);  // Correção mantida para a roda direita
 
   // Aplica as correções nos motores
   int leftSpeed = baseMotorSpeedLeft - correctionYawLeft;   // Corrige o motor esquerdo
@@ -252,8 +267,8 @@ void correctRotationPID() {
   float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
 
   // Limitar as correções para evitar valores extremos
-  correctionYawLeft = constrain(correctionYawLeft, -20, 20);  // Correção ampliada para a roda esquerda
-  correctionYawRight = constrain(correctionYawRight, -10, 10);  // Correção mantida para a roda direita
+  correctionYawLeft = constrain(correctionYawLeft, -30, 30);  // Correção ampliada para a roda esquerda
+  correctionYawRight = constrain(correctionYawRight, -30, 30);  // Correção mantida para a roda direita
 
   // Aplica as correções nos motores durante a rotação
   int leftSpeed = rotationSpeed - correctionYawLeft;   // Corrige o motor esquerdo
@@ -271,4 +286,3 @@ void correctRotationPID() {
   prevErrorYawLeft = errorYaw;
   prevErrorYawRight = errorYaw;
 }
-
