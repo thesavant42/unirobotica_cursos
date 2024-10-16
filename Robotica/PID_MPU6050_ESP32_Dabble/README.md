@@ -65,7 +65,7 @@ Conecte os componentes conforme o seguinte esquema:
 
 ## Código
 
-[PID_MPU6050_ESP32_Dabble.ino]{/blob/main/Robotica/PID_MPU6050_ESP32_Dabble/PID_MPU6050_ESP32_Dabble.ino}
+[PID_MPU6050_ESP32_Dabble.ino](https://github.com/UniRobotica/Cursos/blob/main/Robotica/PID_MPU6050_ESP32_Dabble/PID_MPU6050_ESP32_Dabble.ino)
 
 ## Uso do Aplicativo Dabble
 
