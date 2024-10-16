@@ -20,9 +20,9 @@
  * - O robô rotaciona à esquerda e à direita com base nos comandos correspondentes.
  * - O PID é utilizado para corrigir a trajetória em tempo real, ajustando a velocidade de cada roda para manter uma trajetória reta.
  * 
- * Versão: 1.0
+ * Versão: 1.1
  * Autor: Prof. Dr. Robson Marinho
- * Data: 15/10/2024
+ * Data: 16/10/2024
  */
 
 
@@ -156,24 +156,14 @@ void stopMotors() {
 
 // Rotação incremental para a esquerda
 void rotateLeft() {
-  digitalWrite(leftMotorPin1, LOW);  // Esquerdo vai para trás
-  digitalWrite(leftMotorPin2, HIGH);
-  analogWrite(motorLeftPWM, rotationSpeed);
-
-  digitalWrite(rightMotorPin1, HIGH);  // Direito vai para frente
-  digitalWrite(rightMotorPin2, LOW);
-  analogWrite(motorRightPWM, rotationSpeed);
+  targetYaw -= 5;  // Define um valor de rotação desejada ao girar para a esquerda
+  correctRotationPID();  // Corrige a rotação usando PID para cada roda
 }
 
 // Rotação incremental para a direita
 void rotateRight() {
-  digitalWrite(leftMotorPin1, HIGH);  // Esquerdo vai para frente
-  digitalWrite(leftMotorPin2, LOW);
-  analogWrite(motorLeftPWM, rotationSpeed);
-
-  digitalWrite(rightMotorPin1, LOW);  // Direito vai para trás
-  digitalWrite(rightMotorPin2, HIGH);
-  analogWrite(motorRightPWM, rotationSpeed);
+  targetYaw += 5;  // Define um valor de rotação desejada ao girar para a direita
+  correctRotationPID();  // Corrige a rotação usando PID para cada roda
 }
 
 // Função para corrigir a trajetória usando PID com os dados do MPU6050
@@ -232,3 +222,53 @@ void correctTrajectoryPID() {
   prevErrorYawLeft = errorYaw;
   prevErrorYawRight = errorYaw;
 }
+
+// Função para corrigir a rotação usando PID separado para as rodas direita e esquerda
+void correctRotationPID() {
+  // Calcula o tempo desde a última execução
+  unsigned long currentTime = millis();
+  dt = (currentTime - lastTime) / 1000.0;  // Converte para segundos
+  lastTime = currentTime;
+
+  // Calcular erro de yaw (diferença entre o ângulo atual e o desejado)
+  float errorYaw = targetYaw - currentYaw;
+
+  // PID para a roda esquerda
+  float proportionalYawLeft = KpLeft * errorYaw;
+  integralYawLeft += errorYaw * dt;
+  float integralTermYawLeft = KiLeft * integralYawLeft;
+  float derivativeYawLeft = (errorYaw - prevErrorYawLeft) / dt;
+  float derivativeTermYawLeft = KdLeft * derivativeYawLeft;
+
+  // PID para a roda direita
+  float proportionalYawRight = KpRight * errorYaw;
+  integralYawRight += errorYaw * dt;
+  float integralTermYawRight = KiRight * integralYawRight;
+  float derivativeYawRight = (errorYaw - prevErrorYawRight) / dt;
+  float derivativeTermYawRight = KdRight * derivativeYawRight;
+
+  // Calcular as correções finais para cada roda
+  float correctionYawLeft = proportionalYawLeft + integralTermYawLeft + derivativeTermYawLeft;
+  float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
+
+  // Limitar as correções para evitar valores extremos
+  correctionYawLeft = constrain(correctionYawLeft, -20, 20);  // Correção ampliada para a roda esquerda
+  correctionYawRight = constrain(correctionYawRight, -10, 10);  // Correção mantida para a roda direita
+
+  // Aplica as correções nos motores durante a rotação
+  int leftSpeed = rotationSpeed - correctionYawLeft;   // Corrige o motor esquerdo
+  int rightSpeed = rotationSpeed + correctionYawRight; // Corrige o motor direito
+
+  // Garante que as velocidades fiquem dentro dos limites (0 a 255)
+  leftSpeed = constrain(leftSpeed, 0, 255);
+  rightSpeed = constrain(rightSpeed, 0, 255);
+
+  // Aplica a correção aos motores
+  analogWrite(motorLeftPWM, leftSpeed);
+  analogWrite(motorRightPWM, rightSpeed);
+
+  // Armazena o erro para a próxima iteração
+  prevErrorYawLeft = errorYaw;
+  prevErrorYawRight = errorYaw;
+}
+
