@@ -25,7 +25,6 @@
  * Data: 16/10/2024
  */
 
-
 #include <Wire.h>
 #include <MPU6050.h>
 #include <DabbleESP32.h>
@@ -171,7 +170,12 @@ void rotateLeft() {
   analogWrite(motorRightPWM, rotationSpeed);
 }
 
-// Função para corrigir a trajetória usando PID com filtro passa-baixa e windup
+// Função para corrigir o windup do PID
+void limitIntegral(float &integralYaw) {
+  integralYaw = constrain(integralYaw, -windupLimit, windupLimit);
+}
+
+// Função para corrigir a trajetória usando PID com filtro passa-baixa
 void correctTrajectoryPID() {
   unsigned long currentTime = millis();
   dt = (currentTime - lastTime) / 1000.0;
@@ -182,7 +186,7 @@ void correctTrajectoryPID() {
   float proportionalYawLeft = KpLeft * errorYaw;
 
   integralYawLeft += errorYaw * dt;
-  integralYawLeft = constrain(integralYawLeft, -windupLimit, windupLimit);  // Controle de windup
+  limitIntegral(integralYawLeft);  // Controle de windup
   float integralTermYawLeft = KiLeft * integralYawLeft;
 
   float derivativeYawLeft = (errorYaw - prevErrorYawLeft) / dt;
@@ -191,7 +195,7 @@ void correctTrajectoryPID() {
   float proportionalYawRight = KpRight * errorYaw;
 
   integralYawRight += errorYaw * dt;
-  integralYawRight = constrain(integralYawRight, -windupLimit, windupLimit);  // Controle de windup
+  limitIntegral(integralYawRight);  // Controle de windup
   float integralTermYawRight = KiRight * integralYawRight;
 
   float derivativeYawRight = (errorYaw - prevErrorYawRight) / dt;
@@ -200,9 +204,7 @@ void correctTrajectoryPID() {
   float correctionYawLeft = proportionalYawLeft + integralTermYawLeft + derivativeTermYawLeft;
   float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
 
-  correctionYawLeft = constrain(correctionYawLeft, -30, 30);
-  correctionYawRight = constrain(correctionYawRight, -30, 30);
-
+  // Removendo a limitação fixa nos correções
   int leftSpeed = baseMotorSpeedLeft - correctionYawLeft;
   int rightSpeed = baseMotorSpeedRight + correctionYawRight;
 
@@ -225,14 +227,14 @@ void correctRotationPID() {
 
   float proportionalYawLeft = KpLeft * errorYaw;
   integralYawLeft += errorYaw * dt;
-  integralYawLeft = constrain(integralYawLeft, -windupLimit, windupLimit);
+  limitIntegral(integralYawLeft);
   float integralTermYawLeft = KiLeft * integralYawLeft;
   float derivativeYawLeft = (errorYaw - prevErrorYawLeft) / dt;
   float derivativeTermYawLeft = KdLeft * derivativeYawLeft;
 
   float proportionalYawRight = KpRight * errorYaw;
   integralYawRight += errorYaw * dt;
-  integralYawRight = constrain(integralYawRight, -windupLimit, windupLimit);
+  limitIntegral(integralYawRight);
   float integralTermYawRight = KiRight * integralYawRight;
   float derivativeYawRight = (errorYaw - prevErrorYawRight) / dt;
   float derivativeTermYawRight = KdRight * derivativeYawRight;
@@ -240,9 +242,7 @@ void correctRotationPID() {
   float correctionYawLeft = proportionalYawLeft + integralTermYawLeft + derivativeTermYawLeft;
   float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
 
-  correctionYawLeft = constrain(correctionYawLeft, -30, 30);
-  correctionYawRight = constrain(correctionYawRight, -30, 30);
-
+  // Removendo a limitação fixa nos correções
   int leftSpeed = rotationSpeed - correctionYawLeft;
   int rightSpeed = rotationSpeed + correctionYawRight;
 
