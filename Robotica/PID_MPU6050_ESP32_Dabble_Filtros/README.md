@@ -180,7 +180,52 @@ Aqui está um diagrama básico de conexão do ESP32 com o MPU6050 e os motores:
   - Motores conectados aos pinos: 13, 25, 33, 32, 26, 27 (via driver TB6612).
   - MPU6050 conectado aos pinos SDA e SCL (I2C).
 
-> O diagrama pode ser gerado utilizando ferramentas como o Fritzing, conectando o ESP32, o MPU6050 e os motores controlados pelo driver TB6612.
+
+
+## Filtro Passa-Baixa
+
+O filtro passa-baixa é utilizado para suavizar as leituras do sensor, filtrando ruídos e variações rápidas nos dados. Isso é especialmente útil em aplicações de controle, onde oscilações bruscas podem afetar o desempenho do sistema.
+
+### Como Funciona:
+
+- O filtro passa-baixa permite que os sinais de baixa frequência (como mudanças suaves e graduais) passem, enquanto atenua sinais de alta frequência (como ruídos).
+- Um parâmetro comum utilizado em filtros passa-baixa é a constante de tempo, que determina a rapidez com que o filtro responde a mudanças no sinal de entrada.
+
+### Implementação:
+
+No código, a implementação típica de um filtro passa-baixa pode ser feita com uma fórmula como esta:
+
+```cpp
+filteredValue = alpha * newValue + (1 - alpha) * filteredValue;
+```
+
+Onde `alpha` é um valor entre 0 e 1 que determina o grau de suavização. Quanto mais próximo de 1, mais rápida a resposta do filtro, e quanto mais próximo de 0, mais suave será a saída.
+
+## Windup
+
+O problema de windup ocorre em sistemas de controle PID quando o valor integral acumulado se torna excessivo devido a uma diferença significativa entre a saída desejada e a real. Isso pode causar um atraso na resposta do sistema e levar a oscilações ou overshoot na saída.
+
+### Como Funciona:
+
+- O controle integral acumula o erro ao longo do tempo para eliminar o desvio sistemático. No entanto, se o sistema estiver em saturação (por exemplo, os motores não podem fornecer mais potência), o valor integral continuará a aumentar, causando um “windup”.
+
+### Implementação:
+
+Para evitar o windup, implementamos limites para o valor integral, garantindo que ele não ultrapasse certos limites. A implementação típica pode ser assim:
+
+```cpp
+integralYawLeft += errorYaw * dt;
+integralYawLeft = constrain(integralYawLeft, -maxIntegral, maxIntegral);
+```
+
+Neste código, `maxIntegral` é o valor máximo que o termo integral pode alcançar. O uso de `constrain()` assegura que, independentemente do erro acumulado, o valor integral não exceda os limites estabelecidos.
+
+## Resumo
+- **Filtro Passa-Baixa**: Suaviza as leituras dos sensores, minimizando o impacto de ruídos.
+- **Windup**: Controla o acúmulo de erro integral em sistemas PID para evitar respostas indesejadas, limitando o crescimento do termo integral.
+
+Esses filtros são fundamentais para garantir um controle suave e preciso do robô, melhorando a estabilidade e a resposta do sistema durante a operação.
+
 
 ## Conclusão
 
