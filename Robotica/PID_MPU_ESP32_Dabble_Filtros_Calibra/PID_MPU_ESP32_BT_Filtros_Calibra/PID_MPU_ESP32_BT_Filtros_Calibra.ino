@@ -21,6 +21,7 @@ int16_t ax, ay, az; // Aceleração
 int16_t gx, gy, gz; // Giroscópio
 float currentYaw = 0;
 float targetYaw = 0;
+float yawOffset = 0; // Offset do yaw
 
 // Filtro passa-baixa para suavizar a leitura do giroscópio
 float alpha = 0.8;  // Constante do filtro passa-baixa
@@ -37,16 +38,16 @@ const int leftMotorPin2 = 27;
 
 // Velocidades base ajustadas para as rodas
 int baseMotorSpeedLeft = 50;  
-int baseMotorSpeedRight = 100;  //no robô 4 a roda direita está mais lenta
+int baseMotorSpeedRight = 60;  //no robô 4 a roda direita está mais lenta
 int rotationSpeed = 20;        
 
 // Constantes PID ajustadas para a roda esquerda
-float KpLeft = 3.0, KiLeft = 0.1, KdLeft = 1.5;
+float KpLeft = 2.0, KiLeft = 0.1, KdLeft = 1.0;
 float prevErrorYawLeft = 0;
 float integralYawLeft = 0;
 
 // Constantes PID ajustadas para a roda direita
-float KpRight = 12.0, KiRight = 0.1, KdRight = 3.0; //no robô 4 a roda direita está mais lenta
+float KpRight = 4.0, KiRight = 0.1, KdRight = 2.0; //no robô 4 a roda direita está mais lenta
 float prevErrorYawRight = 0;
 float integralYawRight = 0;
 
@@ -59,8 +60,7 @@ float dt = 0.1;
 void setup() {
   Serial.begin(115200);
 
- // Dabble.begin("ESP32-Robo2");  
- Dabble.begin("ESP32-Robo4");  
+  Dabble.begin("ESP32-Robo4");  
   Wire.begin();
   mpu.initialize();
   
@@ -70,6 +70,16 @@ void setup() {
   } else {
     Serial.println("MPU6050 conectado!");
   }
+
+  // Calibração do yaw
+  for (int i = 0; i < 100; i++) {
+    mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    yawOffset += (gz / 131.0); // Soma a leitura do giroscópio
+    delay(10);
+  }
+  yawOffset /= 100; // Calcula a média
+  Serial.print("Yaw Offset: ");
+  Serial.println(yawOffset);
 
   pinMode(rightMotorPin1, OUTPUT);
   pinMode(rightMotorPin2, OUTPUT);
@@ -87,7 +97,7 @@ void loop() {
   mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
   // Atualiza e filtra a leitura de yaw (giroscópio)
-  float rawYaw = (gz / 131.0) * dt;
+  float rawYaw = (gz / 131.0) * dt - yawOffset; // Ajusta com o yawOffset
   filteredYaw = alpha * filteredYaw + (1 - alpha) * rawYaw;
   currentYaw += filteredYaw;
 
@@ -216,42 +226,32 @@ void correctTrajectoryPID() {
   prevErrorYawRight = errorYaw;
 }
 
-
 // Função para corrigir a rotação usando PID
 void correctRotationPID() {
-  unsigned long currentTime = millis();
-  dt = (currentTime - lastTime) / 1000.0;
+    unsigned long currentTime = millis();
+    dt = (currentTime - lastTime) / 1000.0;
   lastTime = currentTime;
 
   float errorYaw = targetYaw - currentYaw;
 
-  // Cálculos do PID para correção durante a rotação
-  float proportionalYawLeft = KpLeft * errorYaw;
-  integralYawLeft += errorYaw * dt;
-  limitIntegral(integralYawLeft);
-  float integralTermYawLeft = KiLeft * integralYawLeft;
-  float derivativeYawLeft = (errorYaw - prevErrorYawLeft) / dt;
-  float derivativeTermYawLeft = KdLeft * derivativeYawLeft;
-
-  float proportionalYawRight = KpRight * errorYaw;
+  // Cálculo dos termos PID para a correção de rotação
+  float proportionalRotation = KpRight * errorYaw;
   integralYawRight += errorYaw * dt;
   limitIntegral(integralYawRight);
-  float integralTermYawRight = KiRight * integralYawRight;
-  float derivativeYawRight = (errorYaw - prevErrorYawRight) / dt;
-  float derivativeTermYawRight = KdRight * derivativeYawRight;
+  float integralTermRotation = KiRight * integralYawRight;
+  float derivativeRotation = (errorYaw - prevErrorYawRight) / dt;
+  float derivativeTermRotation = KdRight * derivativeRotation;
 
-  float correctionYawLeft = proportionalYawLeft + integralTermYawLeft + derivativeTermYawLeft;
-  float correctionYawRight = proportionalYawRight + integralTermYawRight + derivativeTermYawRight;
+  // Correção total para a rotação
+  float correctionRotation = proportionalRotation + integralTermRotation + derivativeTermRotation;
 
-  int leftSpeed = baseMotorSpeedLeft - correctionYawLeft;
-  int rightSpeed = baseMotorSpeedRight + correctionYawRight;
+  // Ajuste da velocidade do motor com base na correção do PID
+  int rightSpeed = rotationSpeed + correctionRotation;
+  int leftSpeed = -rotationSpeed + correctionRotation;
 
-  leftSpeed = constrain(leftSpeed, -windupLimit, windupLimit);
-  rightSpeed = constrain(rightSpeed, -windupLimit, windupLimit);
-
+  // Aplicação das velocidades aos motores
   analogWrite(motorLeftPWM, leftSpeed);
   analogWrite(motorRightPWM, rightSpeed);
 
-  prevErrorYawLeft = errorYaw;
   prevErrorYawRight = errorYaw;
 }
