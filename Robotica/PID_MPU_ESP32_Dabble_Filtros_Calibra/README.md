@@ -54,7 +54,7 @@ Este projeto controla um carro robô de duas rodas (2WD) utilizando um microcont
 
 ## Ajustes e Calibrações
 - É possível ajustar as constantes do PID diretamente no código para melhorar a precisão da trajetória.
-- O valor inicial do offset de yaw pode ser ajustado ao calibrar pressionando o botão **X**.
+- O valor inicial do offset de yaw é ajustado na inicialização e você pode conferial pelo monitor serial da IDE.
 
 ## Licença
 Este projeto é de código aberto. Sinta-se à vontade para modificar e usar como desejar.
