@@ -39,20 +39,20 @@ const int leftMotorPin2 = 27;
 // Velocidades base ajustadas para as rodas
 int baseMotorSpeedLeft = 50;  
 int baseMotorSpeedRight = 60;  //no robô 4 a roda direita está mais lenta
-int rotationSpeed = 20;        
+int rotationSpeed = 30;        
 
 // Constantes PID ajustadas para a roda esquerda
-float KpLeft = 2.0, KiLeft = 0.1, KdLeft = 1.0;
+float KpLeft = 1.0, KiLeft = 0.05, KdLeft = 0.5;
 float prevErrorYawLeft = 0;
 float integralYawLeft = 0;
 
 // Constantes PID ajustadas para a roda direita
-float KpRight = 4.0, KiRight = 0.1, KdRight = 2.0; //no robô 4 a roda direita está mais lenta
+float KpRight = 2.0, KiRight = 0.1, KdRight = 1.0; //no robô 4 a roda direita está mais lenta
 float prevErrorYawRight = 0;
 float integralYawRight = 0;
 
 // Limites para o windup do PID (para evitar saturação do termo integral)
-const float windupLimit = 50.0;  // Ajuste conforme necessário
+const float windupLimit = 80.0;  // Ajuste conforme necessário
 
 unsigned long lastTime = 0;
 float dt = 0.1;
