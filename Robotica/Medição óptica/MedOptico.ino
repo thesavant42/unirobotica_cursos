@@ -5,11 +5,11 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
 // Definição dos pinos
-const int motorPin1 = 9;     // Pino de controle de velocidade (PWM)
-const int motorPin2 = 10;    // Pino de controle de direção
-const int ldrPin = A0;       // Pino do LDR
+const int motorPin1 = 9;       // Pino de controle de velocidade (PWM)
+const int motorPin2 = 10;      // Pino de controle de direção
+const int ldrPin = A0;         // Pino do LDR
 const int potentiometerPin = A1; // Pino do potenciômetro para controle de PWM
-const int encoderPin = 2;    // Pino do sensor de efeito Hall ou encoder
+const int encoderPin = 2;      // Pino do sensor de efeito Hall ou encoder
 
 // Variáveis de controle
 volatile int rotationCount = 0;    // Contador de rotações (usado com interrupção)
@@ -51,10 +51,19 @@ void loop() {
   pwmValue = map(potValue, 0, 1023, 0, 255);
   analogWrite(motorPin1, pwmValue); // Ajusta a velocidade do motor com o novo valor de PWM
 
-  // Exibir informações no display LCD
+  // Exibir o valor do LDR e a mensagem de detecção
   lcd.setCursor(0, 0);
   lcd.print("LDR: ");
   lcd.print(ldrValue);
+  if (ldrValue > threshold) {
+    lcd.setCursor(10, 0);
+    lcd.print("Detectado   ");  // Espacos adicionais para limpar o display
+  } else {
+    lcd.setCursor(10, 0);
+    lcd.print("Nao detectado");
+  }
+
+  // Exibir o valor PWM na segunda linha
   lcd.setCursor(0, 1);
   lcd.print("PWM: ");
   lcd.print(pwmValue);
@@ -64,16 +73,6 @@ void loop() {
   Serial.println(ldrValue);
   Serial.print("PWM Value: ");
   Serial.println(pwmValue);
-
-  // Verificar se o laser foi refletido (acima do limite)
-  if (ldrValue > threshold) {
-    Serial.println("Laser detectado!");
-    lcd.setCursor(8, 0);
-    lcd.print("Laser detect.");
-  } else {
-    lcd.setCursor(8, 0);
-    lcd.print("Nao detectado"); // Exibe "Nao detectado" quando o laser não é refletido
-  }
 
   // Verificar se o número de rotações foi atingido
   if (rotationCount >= targetRotations) {
