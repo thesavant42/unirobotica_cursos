@@ -14,8 +14,8 @@
 #include "LittleFS.h"
 
 // Replace with your network credentials
-const char* ssid = "Robson5G";
-const char* password = "Rms12345";
+const char* ssid = "NomeDaRede";
+const char* password = "SenhaDaRede";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
