@@ -102,7 +102,7 @@ O código está dividido em seções:
 
 ## Código Completo
 
-[MeOptico.ino](https://github.com/UniRobotica/Cursos/blob/main/Robotica/Medi%C3%A7%C3%A3o%20%C3%B3ptica/MedOptico.ino)
+[MedOptico.ino](https://github.com/UniRobotica/Cursos/blob/main/Robotica/Medi%C3%A7%C3%A3o%20%C3%B3ptica/MedOptico.ino)
 
 ---
 

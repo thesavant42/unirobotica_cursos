@@ -15,7 +15,7 @@
 
 // Replace with your network credentials
 const char* ssid = "Robson5G";
-const char* password = "Rms12345";
+const char* password = "12345678";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
