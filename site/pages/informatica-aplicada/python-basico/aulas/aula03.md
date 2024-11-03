@@ -1,7 +1,15 @@
-- [Aula Anterior](../aula02/aulas02.md) | [Próxima Aula](../aula04/aula04.md)
+---
+title: "Aula 03"
+permalink: "/informatica-aplicada/python-basico/aula03"  
+layout: default    
+---
 
-* [Link da aula no GitHub](https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb)
-* [Link da aula no Colab](https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb)
+[Aula Anterior](aula02.md) | [Próxima Aula](aula04.md)
+
+> - <a href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb" target="_blank">Link da aula no GitHub</a>
+
+> - <a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb" target="_blank">Link da aula no Colab</a>
+
 
 # Importando Módulos
 Todos os programas Python podem chamar um conjunto básico de funções chamadas funções integradas , incluindo as funções print() , input() e len() que você já viu antes. 
@@ -68,7 +76,7 @@ else:
     print('Não. O número que eu estava pensando era ' + str(numeroSecreto))
 ```
 
-https://autbor.com/guessthenumber/
+<a href="https://autbor.com/guessthenumber/" target="_blank">https://autbor.com/guessthenumber/</a>
 
 ```python
 import math #importa a biblioteca
@@ -133,10 +141,9 @@ Além dos módulos que fazem parte da biblioteca padrão do Python, existem dive
 
 ## Numpy
 Com o **numpy** você consegue trabalhar com arrays multidimensionais, ou seja, matrizes. Desta forma, é possivel realizar operações matriciais como multiplicação ou soma de matrizes. 
-</br>
-</br>
+
 *Como instalar?*
-</br>
+
 ``pip install numpy``
 
 ```python
@@ -258,10 +265,10 @@ Uma biblioteca em Python é um conjunto de módulos e funções pré-definidos q
 
 # Exemplo Prático de Uso na Engenharia Civil
 
-Podemos utilizar o PyCBA para fazer análises em uma dimensão de vigas. O seguinte exemplo foi retirado da documentação oficial do [PyCBA](https://ccaprani.github.io/pycba/notebooks/intro.html).
+Podemos utilizar o PyCBA para fazer análises em uma dimensão de vigas. O seguinte exemplo foi retirado da documentação oficial do <a href="https://ccaprani.github.io/pycba/notebooks/intro.html" target="_blank">PyCBA</a>.
 
 Vamos analisar uma viga de dois vãos, com as cargas distribuidas uniformente (UDL) em cada vão.
-<img src="img/exemplo_viga.png" width="700">
+![image 1](img/aula03/exemplo_viga.png)
 <br/>
 Inicialmente, definimos os comprimentos dos membros, que neste caso coincidem com os vãos, AB e BC.
 
@@ -299,4 +306,4 @@ analise_viga.analyze()
 analise_viga.plot_results()
 ```
 
-- [Aula Anterior](../aula02/aulas02.md) | [Próxima Aula](../aula04/aula04.md)
+[Aula Anterior](aula02.md) | [Próxima Aula](aula04.md)

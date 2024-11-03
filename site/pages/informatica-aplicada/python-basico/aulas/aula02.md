@@ -1,7 +1,15 @@
-- [Aula Anterior](../aula01/aula01.md) | [Próxima Aula](../aula03/aula03.md)
+---
+title: "Aula 02"
+permalink: "/informatica-aplicada/python-basico/aula02"  
+layout: default   
+---
 
-* [Link da aula no Github](https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula2_ControleFluxo.ipynb)
-* [Link da aula no Colab](https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula2_ControleFluxo.ipynb)
+[Aula Anterior](aula01.md) | [Próxima Aula](aula03.md)
+
+> - <a href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula2_ControleFluxo.ipynb" target="_blank">Link da aula no Github</a><br>
+
+> - <a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula2_ControleFluxo.ipynb" target="_blank">Link da aula no Colab</a>
+
 
 # CONTROLE DE FLUXO
 Você conheceu o básico das instruções individuais e sabe que um programa é apenas uma série de instruções. 
@@ -24,7 +32,7 @@ Essas instruções de controle de fluxo correspondem diretamente aos símbolos e
         # SE ESTÁ CHOVENDO
 ```
 
-![image 1](img/img01.jpg)
+![image 1](img/aula02/img01.jpg)
 
 Em um fluxograma, geralmente há mais de um caminho a percorrer do início ao fim. O mesmo se aplica às linhas de código de um programa de computador. Os fluxogramas representam esses pontos de ramificação com losangos, enquanto as outras etapas são representadas com retângulos. As etapas inicial e final são representadas por retângulos arredondados.
 
@@ -185,7 +193,7 @@ Lembre-se de que os operadores and , or e not são chamados de operadores boolea
 (4 < 5) and (5 < 6)
 ```
 
-![image 2](img/img02.jpg)
+![image 2](img/aula02/img02.jpg)
 
 ```python
 (4 < 5) and (9 < 6)
@@ -225,7 +233,7 @@ else:
      print("Você não é Mary!")
 ```
 
-Você pode ver a execução deste programa em https://autbor.com/blocks/ .
+Você pode ver a execução deste programa em <a href="https://autbor.com/blocks" target="_blank">https://autbor.com/blocks</a> .
 
 ## Declarações de controle de fluxo
 
@@ -253,7 +261,7 @@ if name == 'Alice':
 name
 ```
 
-![image 3](img/img03.jpg)
+![image 3](img/aula02/img03.jpg)
 
 ```python
 name = 'Alice'
@@ -271,7 +279,7 @@ Uma instrução else não tem uma condição e, no código, uma instrução else
 * Dois pontos
 * Começando na próxima linha, um bloco de código recuado (chamado de cláusula else )
 
-![image 4](img/img04.jpg)
+![image 4](img/aula02/img04.jpg)
 
 ```python
 name = 'John'
@@ -293,7 +301,7 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 * Dois pontos
 * Começando na próxima linha, um bloco de código recuado (chamado de cláusula elif )
 
-![image 5](img/img05.jpg)
+![image 5](img/aula02/img05.jpg)
 
 ```python
 name = 'John'
@@ -324,7 +332,7 @@ if name != 'Alice':
     print('You are not Alice, grannie.')
 ```
 
-https://autbor.com/vampire2/
+<a href="https://autbor.com/vampire2/" target="_blank">https://autbor.com/vampire2/</a>
 
 ```python
 name = 'Mary'
@@ -348,7 +356,7 @@ Você pode fazer um bloco de código ser executado repetidamente usando uma inst
 
 # Exemplo com ``if``
 
-![image 6](img/img06.jpg)
+![image 6](img/aula02/img06.jpg)
 
 ```python
 spam = 4
@@ -363,7 +371,7 @@ spam
 
 # Exemplo com ``while``
 
-![image 7](img/img07.jpg)
+![image 7](img/aula02/img07.jpg)
 
 ```python
 spam = 5
@@ -380,12 +388,12 @@ while name != 'your name':
 print('Thank you!')
 ```
 
-https://autbor.com/yourname/
+<a href="https://autbor.com/yourname/" target="_blank">https://autbor.com/yourname/</a>
 
 >[Um loop while irritante]
 Aqui está um pequeno exemplo de programa que irá pedir para você digitar, literalmente, seu nome .
 
-![image 8](img/img08.jpg)
+![image 8](img/aula02/img08.jpg)
 
 Existe um atalho para fazer com que a execução do programa saia antecipadamente de uma cláusula do loop while . Se a execução atingir uma instrução break , ela sai imediatamente da cláusula do loop while . No código, uma instrução break contém simplesmente a palavra-chave break .
 
@@ -398,7 +406,7 @@ while True:
 print('Thank you!')
 ```
 
-![image 9](img/img09.jpg)
+![image 9](img/aula02/img09.jpg)
 
 > Se você alguma vez executar um programa que tenha um bug que o faça travar em um loop infinito, pressione CTRL -C
 
@@ -417,7 +425,7 @@ while True:
 
 Se o usuário inserir qualquer nome além de Joe, a instrução continue faz com que a execução do programa volte ao início do loop. Quando o programa reavaliar a condição, a execução sempre entrará no loop, pois a condição é simplesmente o valor True . Depois que o usuário passa dessa instrução if , é solicitada uma senha. Se a senha inserida for correta, a instrução break será executada e a execução sairá do loop while para imprimir Acesso concedido. Caso contrário, a execução continua até o final do loop while , onde retorna ao início do loop.
 
-![image 10](img/img10.jpg)
+![image 10](img/aula02/img10.jpg)
 
 # Loop for e a função range()
 O loop while continua em loop enquanto sua condição for True (que é a razão de seu nome), mas e se você quiser executar um bloco de código apenas um determinado número de vezes? Você pode fazer isso com uma instrução de loop for e a função range() .
@@ -436,9 +444,9 @@ for item in range(5): # de 0 a 4, i.e., limite superior não é considerado
     print('Jimmy Five Times (' + str(item) + ')')
 ```
 
-![image 11](img/img11.jpg)
+![image 11](img/aula02/img11.jpg)
 
-https://autbor.com/fivetimesfor/
+<a href="https://autbor.com/fivetimesfor/" target="_blank">https://autbor.com/fivetimesfor/</a>
 
 >Você também pode usar instruções ``break`` e ``continue`` dentro de loops ``for`` . A instrução ``continue`` continuará até o próximo valor do contador do loop ``for`` , como se a execução do programa tivesse atingido o final do loop e retornado ao início. Na verdade, você pode usar instruções ``continue`` e ``break`` apenas dentro de loops ``while`` e ``for`` . Se você tentar usar essas instruções em outro lugar, o Python apresentará um erro.
 
@@ -530,4 +538,4 @@ for material, quantidade in materiais.items():
         print(f"Quantidade suficiente de {material}.")
 ```
 
-- [Aula Anterior](../aula01/aula01.md) | [Próxima Aula](../aula03/aula03.md)
+[Aula Anterior](aula01.md) | [Próxima Aula](aula03.md)

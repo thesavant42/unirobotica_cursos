@@ -1,7 +1,14 @@
-* [Próxima Aula](../aula02/aulas02.md)
+---
+title: "Aula 01"
+permalink: "/informatica-aplicada/python-basico/aula01"
+layout: default   
+---
 
-* [Link do Notebook da aula no Github](https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipynb)
-* [Link do Notebook no Colab](https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipynb)
+| [Próxima Aula](aula02.md) |
+
+> - <a href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipynb" target="_blank">Link do Notebook no Github</a>
+
+> - <a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipyn" target="_blank">Link do Notebook no Colab</a>
 
 # O que é programar
 
@@ -14,7 +21,7 @@ Todos os programas usam instruções básicas como blocos de construção. Aqui 
 “Do this action exactly 27 times.”
 “Keep doing that until this condition is true.”
 
-![image 01!](img/img01.png)
+![image 01!](img/aula01/img01.png)
 
 Você também pode combinar esses blocos de construção para implementar decisões mais complexas. Por exemplo, aqui estão as instruções de programação, chamadas de código-fonte , para um programa simples escrito na linguagem de programação Python. Começando no topo, o software Python executa cada linha de código (algumas linhas são executadas apenas se uma determinada condição for verdadeira ou então o Python executa alguma outra linha) até chegar ao final.
 
@@ -35,15 +42,16 @@ else:
 
 Na verdade, ser bom em programação não é muito diferente de ser bom em resolver quebra-cabeças
 
-![image 2!](img/img02.png)
+![image 2!](img/aula01/img02.png)
 
-![image 3!](img/img03.png)
+![image 3!](img/aula01/img03.png)
 
-[colab](https://colab.research.google.com/)
 
-https://replit.com/
+> <a href="https://colab.research.google.com/" target="_blank">Colab</a>
 
-https://codewith.mu/en/about
+> <a href="https://replit.com/" target="_blank">Replit</a>
+
+> <a href="https://codewith.mu/en/about" target="_blank">codewith</a>
 
 # Encontrando Ajuda
 
@@ -126,7 +134,7 @@ Você pode usar parênteses para substituir a precedência usual, se necessário
 
 Python continuará avaliando partes da expressão até que ela se torne um valor único, conforme mostrado aqui
 
-![Image 4!](img/img04.png)
+![Image 4!](img/aula01/img04.png)
 
 # Tipos de dados inteiro, ponto flutuante e string
 
@@ -157,7 +165,7 @@ Python continuará avaliando partes da expressão até que ela se torne um valor
 # Armazenando Valores em Variáveis
 Uma variável é como uma caixa na memória do computador onde você pode armazenar um único valor. Se quiser usar o resultado de uma expressão avaliada posteriormente em seu programa, você pode salvá-lo dentro de uma variável.
 
-![Image 5!](img/img05.png)
+![Image 5!](img/aula01/img05.png)
 
 # Declarações de Atribuição
 Você armazenará valores em variáveis ​​com uma instrução de atribuição . Uma instrução de atribuição consiste em um nome de variável, um sinal de igual (chamado operador de atribuição ) e o valor a ser armazenado. Se você inserir a instrução de atribuição spam = 42 , então uma variável chamada spam terá o valor inteiro 42 armazenado nela.
@@ -198,7 +206,7 @@ msg = 'Hello'
 msg
 ```
 
-![Image 6!](img/img06.png)
+![Image 6!](img/aula01/img06.png)
 
 ```python
 msg = 'Goodbye'
@@ -328,7 +336,7 @@ myAge = input()
 print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 ```
 
-![image 7!](img/img07.png)
+![image 7!](img/aula01/img07.png)
 
 As funções str() , int() e float() serão avaliadas nas formas string, inteiro e ponto flutuante do valor que você passa, respectivamente.
 
@@ -431,9 +439,9 @@ Onde:
 * A = Área da seção transversal da coluna.
 
 
-[Exemplo](http://www.profwillian.com/materiais/prob/01.033.pdf) - Calcule a tensão sobre a seguinte coluna:
+<a href="http://www.profwillian.com/materiais/prob/01.033.pdf" target="_blank">Exemplo</a> - Calcule a tensão sobre a seguinte coluna:
 
-<img src="img/img08.png" width="250px"/>
+![image 8](img/aula01/img08.png)
 
 ```python
 F = 8000
@@ -445,6 +453,6 @@ print("A tensão foi de "+str(T)+" N/mm²")
 
 # Referências
 
-https://automatetheboringstuff.com/
+<a href="https://automatetheboringstuff.com/" target="_blank">Automate The Boring Stuff</a>
 
-* [Próxima Aula](../aula02/aulas02.md)
+| [Próxima Aula](aula02.md) |
