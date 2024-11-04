@@ -1,5 +1,0 @@
-write
-read stuffs
-truncate things
-
-testando git e integração com VSCode
