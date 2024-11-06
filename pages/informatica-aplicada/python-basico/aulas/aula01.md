@@ -8,7 +8,7 @@ layout: default
 
 > - <a href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipynb" target="_blank">Link do Notebook no Github</a>
 
-> - <a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipyn" target="_blank">Link do Notebook no Colab</a>
+> - <a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula1_ConceitosBasicos.ipynb" target="_blank">Link do Notebook no Colab</a>
 
 # O que é programar
 

@@ -16,7 +16,7 @@
       <div class="trigger">
           {% for route in site.data.routes offset:0 %}
       
-          <a class="page-link" href="{{site.baseurl}}{{route.route}}">
+          <a class="page-link" href="{{site.url}}{{site.baseurl}}{{route.route}}">
               {{route.label}}
           </a>
           {% endfor %}

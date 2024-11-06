@@ -2,11 +2,11 @@
   route: /
 
 - label: Informática Aplicada
-  route: /informatica-aplicada/
+  route: /informatica-aplicada
 
 - label: Python Básico
-  route: /informatica-aplicada/python-basico/
+  route: /informatica-aplicada/python-basico
 
 - label: About
-  route: /about/
+  route: /about
 
