@@ -1,2 +1,2 @@
 # Cursos
-Recursos de aula de cursos
+Recursos de aula de cursos.
