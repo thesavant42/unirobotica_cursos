@@ -4,26 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-    <title>{{page.title}} | UniRobótica</title>
+    <title>{{page.title}} | {{ site.title }}</title>
     <meta name="generator" content="Jekyll v3.10.0" />
-    <meta property="og:title" content="Informática Aplicada" />
+    <meta property="og:title" content="{{page.title}}" />
     <meta property="og:locale" content="pt-BR" />
     <meta name="description" content="O UniRobótica é uma plataforma de aprendizado e desenvolvimento de robótica com foco em pesquisa e educação. Aqui você encontrará recursos, cursos e projetos voltados para a robótica educacional e industrial." />
     <meta property="og:description" content="O UniRobótica é uma plataforma de aprendizado e desenvolvimento de robótica com foco em pesquisa e educação. Aqui você encontrará recursos, cursos e projetos voltados para a robótica educacional e industrial." />
-    <link rel="canonical" href="http://localhost:4000/informatica-aplicada" />
-    <meta property="og:url" content="http://localhost:4000/informatica-aplicada" />
-    <meta property="og:site_name" content="UniRobótica" />
+    <link rel="canonical" href="{{ site.url }}{{ site.base_url }}/informatica-aplicada" />
+    <meta property="og:url" content="{{ site.url }}{{ site.base_url }}/informatica-aplicada" />
+    <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Informática Aplicada" />
+    <meta property="twitter:title" content="{{page.title}}" />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebPage","description":"O UniRobótica é uma plataforma de aprendizado e desenvolvimento de robótica com foco em pesquisa e educação. Aqui você encontrará recursos, cursos e projetos voltados para a robótica educacional e industrial.","headline":"Informática Aplicada","url":"http://localhost:4000/informatica-aplicada"}</script>
+    {"@context":"https://schema.org","@type":"WebPage","description":"{{ site.description }}","url":"{{ site.url }}{{ site.base_url }}/informatica-aplicada"}</script>
     <link rel="shortcut icon" type="image/svg" href={{"favicon.svg" | relative_url}}>
     <link rel="stylesheet" href={{"/assets/css/style.css" | relative_url }}>
      
-    {% include navbar.html %}
+    
 </head>
 <body>
+    {% include navbar.html %}
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             <h1>{{ page.title }}</h1>

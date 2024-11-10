@@ -40,7 +40,7 @@ O link pode ser para uma página sua ou para uma url qualquer.
 Para adicionar imagens, o processo é semelhante ao de um link:
 
 ```markdown
-![texto caso a imagem não seja encontrada](link da imagem)
+![texto caso a imagem não seja encontrada](link-da-imagem)
 ```
 
 **Resultado**:

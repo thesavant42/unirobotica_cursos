@@ -14,10 +14,16 @@
 
     <div class="trigger">
         {% for route in site.data.routes offset:0 %}
-    
-        <a class="page-link" href="{{site.url}}{{site.baseurl}}{{route.route}}">
-            {{route.label}}
-        </a>
+          {% if route.route contains "http" %}
+            <a class="page-link" href="{{route.route}}">
+              {{ route.label }}
+            </a>
+          {% else %}
+            <a class="page-link" href="{{site.url}}{{site.baseurl}}{{route.route}}">
+              {{ route.label }}
+            </a>
+          {% endif %}
+        
         {% endfor %}
     </div>
   </nav>
