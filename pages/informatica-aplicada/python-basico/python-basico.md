@@ -1,6 +1,5 @@
 ---
 title: "Python Básico"
-permalink: "/informatica-aplicada/python-basico/"
 layout: default
 ---
 
