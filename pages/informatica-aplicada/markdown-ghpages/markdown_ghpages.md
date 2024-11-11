@@ -6,7 +6,7 @@ layout: default
 
 Neste tutorial buscamos explicar o uso de Markdown e GitHub pages na criação de sites estáticos. Veremos um breve resumo sobre o que é markdown, algumas de suas tags, e como publicar um site através do GitHub pages.
 
-# O que é markdown?
+# O que é Markdown?
 
 Markdown é uma linguagem de marcação de texto criada para ser simples e de fácil entendimento. Seu objetivo é facilitar a criação de textos formatados, substituindo HTML em tarefas mais simples, como na criação de documentações ou posts de um blog.
 
