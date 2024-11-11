@@ -4,7 +4,7 @@ permalink: "informatica-aplicada/markdown-e-github-pages"
 layout: default
 ---
 
-Neste tutorial buscamos explicar o uso de Markdown e GitHub pages na criação de sites estáticos. Veremos um breve resumo sobre o que é markdown, algumas de suas tags, e como publicar um site através do GitHub pages.
+Neste tutorial buscamos explicar o uso de Markdown e GitHub Pages na criação de sites estáticos. Veremos um breve resumo sobre o que é markdown, algumas de suas tags, e como publicar um site através do GitHub pages.
 
 # O que é Markdown?
 
