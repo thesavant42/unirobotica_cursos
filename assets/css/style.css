@@ -78,6 +78,12 @@ table td { border: 1px solid #e8e8e8; }
   background-color: #000; /* Cor de fundo alterada para preto */
 }
 
+/* Logo image size control */
+.logo-img {
+  width: 60px;  /* Ajuste o valor conforme necessário */
+  height: auto;  /* Mantém a proporção da imagem */
+}
+
 .site-title {
   font-size: 26px;
   font-weight: 300;
