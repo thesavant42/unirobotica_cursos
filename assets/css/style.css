@@ -80,7 +80,7 @@ table td { border: 1px solid #e8e8e8; }
 
 /* Logo image size control */
 .logo-img {
-  width: 150px;  /* Ajuste o valor conforme necessário */
+  width: 200px;  /* Ajuste o valor conforme necessário */
   height: auto;  /* Mantém a proporção da imagem */
 }
 
