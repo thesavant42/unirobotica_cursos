@@ -1,7 +1,7 @@
 # caso adicione um link externo, este deve começar com http, ou seja, a url completa
 
 - label: Home
-  route: /
+  route: https://unirobotica.com.br
 
 - label: Informática Aplicada
   route: /informatica-aplicada
