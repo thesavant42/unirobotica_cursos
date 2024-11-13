@@ -68,15 +68,32 @@ table th, table td { padding: 10px 15px; }
 table th { background-color: #f0f0f0; border: 1px solid #dedede; border-bottom-color: #c9c9c9; }
 table td { border: 1px solid #e8e8e8; }
 
-.site-header { display:flex; justify-content: space-around ; border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; width: 100%;}
+.site-header {
+  display: flex;
+  justify-content: space-around;
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 55.95px;
+  width: 100%;
+  background-color: #000; /* Cor de fundo alterada para preto */
+}
 
-.site-title { font-size: 26px; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0;}
+.site-title {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  color: #fff; /* Cor do texto da logo alterada para branco */
+}
 .site-title, .site-title:visited { color: #424242; }
 
 .site-nav { line-height: 54px; }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { display: none; }
-.site-nav .page-link { color: #111; line-height: 1.5; }
+.site-nav .page-link {
+  color: #fff; /* Cor do texto dos links do menu alterada para branco */
+  line-height: 1.5; }
 .site-nav .page-link:not(:last-child) { margin-right: 20px; }
 @media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 5px; text-align: right; }
   .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer;}
