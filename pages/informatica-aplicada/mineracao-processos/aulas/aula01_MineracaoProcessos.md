@@ -47,7 +47,7 @@ Hoje nós conseguimos criar e gravar uma enorme quantidade de dados.
 
 Para se ter uma ideia dessa evolução, pode-se citar **Lei de Moore** é a observação de que o número de transistores em circuitos integrados dobra aproximadamente a cada dois anos, o que resulta em um aumento exponencial na capacidade de processamento dos computadores. Proposta por Gordon Moore em 1965, essa tendência impulsionou a evolução da tecnologia por décadas. No entanto, à medida que os transistores se aproximam dos limites físicos, a Lei de Moore começa a desacelerar, desafiando a indústria a buscar novas soluções, como a computação quântica.
 
-<img src="../img/aula01_intro/LeiMoore.jpg" width="100%" />
+<img src="../img/aula01_intro/LeiMoore.jpg" alt="alt text" style="width: 100%;" />
 
 
 <div style="background-color: blue; color: white; text-align: center; padding: 10px; font-size: 20px; font-weight: bold;">
