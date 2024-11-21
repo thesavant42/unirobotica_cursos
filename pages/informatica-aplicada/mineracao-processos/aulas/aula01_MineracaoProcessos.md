@@ -127,13 +127,14 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 Na mineração de processos, os tipos Play-in, Play-out e Replay referem-se a diferentes maneiras de interagir com e analisar os processos dentro de um sistema.
 
 
-![alt text](../img/aula01_intro/tiposMinProc.png)
+<img src="../img/aula01_intro/tiposMinProc.png" alt="alt text" style="width: 100%;" />
+
 
 
 ####  **Play Out**
 A ideia é gerar um comportamento, event log, a partir de um modelo. Por exemplo, considere o modelo abaixo
 
-![exe1](..\img\aula01_intro\exe1.png)
+![exe1](../img/aula01_intro/exe1.png)
 
 Podemos a partir desse modelo gerar o seguinte event log:
 
@@ -153,7 +154,7 @@ Neste tipo geramos um modelo de processo a partir de um event log. Existem diver
 - abdeh
 A partir delas podemos determinar o seguinte modelo:
 
-![exe1](..\img\aula01_intro\exe1.png)
+![exe1](../img/aula01_intro/exe1.png)
 
 ### **Replay** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
