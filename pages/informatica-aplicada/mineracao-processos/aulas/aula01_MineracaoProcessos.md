@@ -38,9 +38,23 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 
 ![sensoreamento](../img/aula01_intro/sensorCel.png)
 
+
+
+
 ### Big Data
 
-Como falado antes, hoje nós conseguimos criar e gravar uma enorme quantidade de dados. Portanto, o desafio hoje é encontrar valor nesses dados.
+Hoje nós conseguimos criar e gravar uma enorme quantidade de dados. 
+
+Para se ter uma ideia dessa evolução, pode-se citar **Lei de Moore** é a observação de que o número de transistores em circuitos integrados dobra aproximadamente a cada dois anos, o que resulta em um aumento exponencial na capacidade de processamento dos computadores. Proposta por Gordon Moore em 1965, essa tendência impulsionou a evolução da tecnologia por décadas. No entanto, à medida que os transistores se aproximam dos limites físicos, a Lei de Moore começa a desacelerar, desafiando a indústria a buscar novas soluções, como a computação quântica.
+
+<img src="../img/aula01_intro/LeiMoore.jpg" width="100%" />
+
+
+<div style="background-color: blue; color: white; text-align: center; padding: 10px; font-size: 20px; font-weight: bold;">
+  2²⁰ = 1.048.576 * em 40 anos
+</div>
+
+Portanto, o desafio hoje é encontrar valor nesses dados.
 
 ####  Os 4 desafios do Big Data
 
@@ -49,12 +63,37 @@ Como falado antes, hoje nós conseguimos criar e gravar uma enorme quantidade de
 - Variedade: os dados não mudam apenas de tipo mas também de fontes como imagens, textos, vídeos, e devemos trabalhar com todos eles
 - Veracidade: por conta do volume massivo de dados, pode existir uma dificuldade em verificar a confiabilidade dos dados
 
+## A demanda por cientistas de dados
+
+A crescente demanda por cientistas de dados é impulsionada pela necessidade das empresas de transformar grandes volumes de dados em informações úteis para tomar decisões mais informadas e estratégicas. 
+
+Cientistas de dados aplicam técnicas de mineração de dados, como clustering, classificação, regressão e análise preditiva, para extrair padrões e insights de conjuntos de dados complexos. 
+
+Esses profissionais desempenham um papel fundamental na análise de dados não estruturados e estruturados, utilizando ferramentas e algoritmos sofisticados para transformar dados brutos em conhecimento acionável.
+
 ### Ramos da Ciência de Dados
 ![data science](../img/aula01_intro/DataScience.png)
+
+
+### Exemplo na Construção Civil:
+
+![Imagem Exemplo](https://s2-valor.glbimg.com/Zu9hq96O0GZPRX_db-Dyu316TEM=/0x0:3840x2160/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2023/h/z/pnqTRSRoKK769dnnyaGg/8f75f61f-3207-4286-bc8b-678ffa51555d.jpg)
+
+Na construção civil, a mineração de dados e a ciência de dados podem ser aplicadas para melhorar a eficiência dos projetos e reduzir custos. Um exemplo prático seria o uso de **análise preditiva** para otimizar o cronograma de obras. Cientistas de dados podem analisar dados históricos de projetos anteriores, como tempos de construção, custos de materiais, condições climáticas e desempenho de equipamentos. Usando técnicas de mineração de dados, como **modelagem preditiva**, é possível identificar padrões que indicam quais fatores mais impactam o progresso de uma obra. Com essas informações, as empresas podem prever possíveis atrasos e ajustar os cronogramas de forma mais eficaz, além de otimizar os recursos, como mão de obra e equipamentos, garantindo um melhor controle de custos.
+
+Outro exemplo é o uso de **sensores IoT** em canteiros de obras, que geram dados em tempo real sobre a utilização de máquinas e materiais. Cientistas de dados podem analisar esses dados para detectar ineficiências, prever manutenções de máquinas e otimizar o consumo de recursos.
+
+Esses avanços proporcionam maior previsibilidade, redução de riscos e uma gestão mais eficaz em grandes projetos de construção civil.
+
+
 
 ## Mineração de Processos
 
 A **mineração de processos**, ou **process mining**, é um área que combina **modelos de processos de négocio** com a Ciência de Dados, ou seja, a partir de event logs ocorre a extração do modelo dos processos ou a análise de desempenho, gargalos, conformidade e etc.
+
+Desse modo, a mineração de processos é um elo crucial entre a ciência de dados, que lida com a análise e interpretação dos dados, e o estudo de processos, que foca na melhoria contínua e na eficiência organizacional. Ao aplicar métodos de análise avançada, como aprendizado de máquina e visualização de dados, ela proporciona uma visão detalhada e realista de como os processos funcionam, ajudando as empresas a otimizá-los com base em dados reais.
+
+![alt text](../img/aula01_intro/ponteMinProc.png)
 
 ### Event Logs
 
@@ -85,10 +124,16 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 
 ### Tipos de process mining
 
+Na mineração de processos, os tipos Play-in, Play-out e Replay referem-se a diferentes maneiras de interagir com e analisar os processos dentro de um sistema.
+
+
+![alt text](../img/aula01_intro/tiposMinProc.png)
+
+
 ####  **Play Out**
 A ideia é gerar um comportamento, event log, a partir de um modelo. Por exemplo, considere o modelo abaixo
 
-![exe1](img/exe1.png)
+![exe1](..\img\aula01_intro\exe1.png)
 
 Podemos a partir desse modelo gerar o seguinte event log:
 
@@ -108,7 +153,7 @@ Neste tipo geramos um modelo de processo a partir de um event log. Existem diver
 - abdeh
 A partir delas podemos determinar o seguinte modelo:
 
-![exe1](img/exe1.png)
+![exe1](..\img\aula01_intro\exe1.png)
 
 ### **Replay** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
