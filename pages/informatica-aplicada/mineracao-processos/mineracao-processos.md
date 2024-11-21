@@ -71,7 +71,7 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 
 ### Tipos de process mining
 
-####  Play Out
+####  **Play Out**
 A ideia é gerar um comportamento, event log, a partir de um modelo. Por exemplo, considere o modelo abaixo
 
 ![exe1](img/exe1.png)
@@ -86,7 +86,7 @@ Podemos a partir desse modelo gerar o seguinte event log:
 | 235  | decide (e)                         | 19-8-2014:9.36 | Sue      |
 | 235  | accept request (g)                 | 19-8-2014.9.48 | Mary     |
 
-#### Play In
+#### **Play In**
 Neste tipo geramos um modelo de processo a partir de um event log. Existem diversos algoritmos que fazem isso. Por exemplo, considere a seguinte sequência de letras, onde cada letra representa um evento:
 - abdeg
 - adbeg
@@ -96,5 +96,5 @@ A partir delas podemos determinar o seguinte modelo:
 
 ![exe1](img/exe1.png)
 
-### Replay 
+### **Replay** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
