@@ -24,6 +24,9 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 
 ![internet of events](img/InternetEvents.png)
 
+<font color=\"blue\">Estamos gerando dados de eventos frequentemente</font>
+![estamos gerando eventos](gerEventos.png)
+
 ### Big Data
 
 Como falado antes, hoje nós conseguimos criar e gravar uma enorme quantidade de dados. Portanto, o desafio hoje é encontrar valor nesses dados.
