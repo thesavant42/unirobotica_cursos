@@ -24,7 +24,11 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 
 ![internet of events](img/InternetEvents.png)
 
-<span style="color: blue;">Frequentemente, estamos gerando dados de eventos</span>
+<div style="text-align: center; background-color: white;">
+  <span style="color: blue; font-weight: bold;">Frequentemente, estamos gerando dados de eventos</span>
+</div>
+
+
 
 ![estamos gerando eventos](gerEventos.png)
 
