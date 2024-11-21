@@ -8,7 +8,7 @@ Nesta aula veremos um pouco sobre a mineração de processos, área essa que rel
 
 ## Dados é o novo petróleo!
 
-![data is the new oil](img/data_is_the_new_oil.png)
+![data is the new oil](../img/aula01_intro/data_is_the_new_oil.png)
 
 Hoje em dia, nós estamos gerando uma quantidade de dados maior do que se juntarmos todas as informações da pré-história até o ano de 2003. 
 
@@ -22,7 +22,7 @@ Estamos criando constantemente **dados de evento (event data)**, quando
 
 Quando falamos de todos esses dados sendo gravados, estamos falando da **Internet dos Eventos**.
 
-![internet of events](img/InternetEvents.png)
+![internet of events](../img/aula01_intro/InternetEvents.png)
 
 <div style="text-align: center; background-color: white;">
   <span style="color: blue; font-weight: bold;">Frequentemente, estamos gerando dados de eventos</span>
@@ -30,13 +30,13 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 
 
 
-![estamos gerando eventos](gerEventos.png)
+![estamos gerando eventos](../img/aula01_intro/gerEventos.png)
 
 <div style="text-align: center; background-color: white;">
   <span style="color: blue; font-weight: bold;">Sensores e interfaces de smartphones capturam dados</span>
 </div>
 
-![alt text](image.png)
+![sensoreamento](../img/aula01_intro/sensorCel.png)
 
 ### Big Data
 
@@ -50,7 +50,7 @@ Como falado antes, hoje nós conseguimos criar e gravar uma enorme quantidade de
 - Veracidade: por conta do volume massivo de dados, pode existir uma dificuldade em verificar a confiabilidade dos dados
 
 ### Ramos da Ciência de Dados
-![data science](img/DataScience.png)
+![data science](../img/aula01_intro/DataScience.png)
 
 ## Mineração de Processos
 
