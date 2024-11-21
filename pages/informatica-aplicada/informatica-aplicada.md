@@ -8,4 +8,4 @@ layout: default
 
 - [Aulas de Python](https://python.unirobotica.com.br/)
 - [Markdown e GitHub Pages](markdown-ghpages/markdown_ghpages.md)
-- [Introdução à Mineração de Processos](mineracao-processos/mineracao-processos.md)
+- [Mineração de Processos](pages\informatica-aplicada\mineracaoProcessos.md)

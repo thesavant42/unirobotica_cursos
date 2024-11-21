@@ -32,6 +32,12 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 
 ![estamos gerando eventos](gerEventos.png)
 
+<div style="text-align: center; background-color: white;">
+  <span style="color: blue; font-weight: bold;">Sensores e interfaces de smartphones capturam dados</span>
+</div>
+
+![alt text](image.png)
+
 ### Big Data
 
 Como falado antes, hoje nós conseguimos criar e gravar uma enorme quantidade de dados. Portanto, o desafio hoje é encontrar valor nesses dados.
