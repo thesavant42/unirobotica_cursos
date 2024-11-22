@@ -42,6 +42,10 @@ models to analyze compliance and performance" (van der Aalst, 2016).
 
 **Em resumo,** ao adotar uma visão de ponta a ponta, as empresas de construção podem otimizar seus processos, reduzir custos, melhorar a qualidade e aumentar a satisfação dos clientes. A ideia de van der Aalst de que "o processo é estúpido" serve como um lembrete de que a eficiência e a qualidade de um projeto dependem da otimização do processo como um todo, e não apenas de cada tarefa individual.-->
 
+O valor dos modelos é limitado se pouca atenção for dada ao alinhamento do modelo e da realidade, ou seja, as pessoas envolvidas precisam confiar neles. Por exemplo, não faz sentido conduzir experimentos de simulação enquanto se usa um modelo que assume uma versão idealizada do processo real.
+
+![alt text](../img/aula02_fund/modProc.png)
+
 
 ## **Levantamento de requisitos do processo**
 
@@ -119,6 +123,15 @@ Suponha que você esteja analisando um processo de **aprovação de empréstimos
 
 
 ---
+## Analisar os processos
+
+![alt text](../img/aula02_fund/redesPetriMarca.png)
+
+a = register request, b = examine
+thoroughly, c = examine casually, d = check ticket, e = decide, f = reinitiate request, g = pay compensation, and h = reject request
+
+![alt text](../img/aula02_fund/tabelaCaseID.png)
+
 **Event log** ou **registros de evento** são tabelas que contém as informações de execução dos processos. Nesta tabela, cada linha representa um evento e contém ao menos três colunas essenciais, sendo elas
 - case id - contém um identificador da instância do processo ao qual o evento pertence;
 - activity - a atividade que foi realizada no evento;
@@ -143,10 +156,10 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 | 9901                    | ship order     | 22-1-2014#10.11 | Sue Fox           | iPhone5s               | 1                       |
 | 9901                    | handle payment | 22-1-2014#10.41 | Carol Hope        | iPhone5s               | 1                       |
 
-## Analisar os processos
 
-### Tipos de process mining
-=======
+
+
+---
 ### **Tipos de mineração de processo**
 
 Na mineração de processos, os tipos Play-in, Play-out e Replay referem-se a diferentes maneiras de interagir com e analisar os processos dentro de um sistema.
