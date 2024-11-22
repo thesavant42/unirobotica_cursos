@@ -56,6 +56,8 @@ Portanto, o desafio hoje é encontrar valor nesses dados.
 
 ####  Os 4 desafios do Big Data
 
+![alt text](../img/aula01_intro/BigData.png)
+
 - Volume: estamos criando grandes quantidades de dados
 - Velocidade: a rapidez que os dados estão sendo criados e modificados
 - Variedade: os dados não mudam apenas de tipo mas também de fontes como imagens, textos, vídeos, e devemos trabalhar com todos eles
@@ -83,5 +85,35 @@ Outro exemplo é o uso de **sensores IoT** em canteiros de obras, que geram dado
 
 Esses avanços proporcionam maior previsibilidade, redução de riscos e uma gestão mais eficaz em grandes projetos de construção civil.
 
+## Manipulação de dados
 
+![alt text](../img/aula01_intro/planilhaDados.png)
 
+As planilhas podem ser usadas para fazer qualquer coisa com números, mas têm dificuldades em capturar adequadamente o comportamento dinâmico
+
+## Visão do processo global
+
+![alt text](../img/aula01_intro/procEstupido.png)
+
+Van der Aalst critica a abordagem que foca apenas em padrões ou decisões isoladas, pois acredita que o verdadeiro valor está em entender e otimizar o processo de ponta a ponta. Ele considera "estúpido" tratar processos como uma coleção desconexa de boas práticas ou intervenções pontuais, pois isso ignora a eficiência global e os impactos no resultado final. Um processo pode ter partes otimizadas, mas se o fluxo completo não funcionar bem, o desempenho geral será comprometido. O foco em processos de ponta a ponta é essencial para alinhar eficiência local e global, gerando melhores resultados.
+
+## Exemplo na Construção Civil
+
+Imagine a construção de um prédio. Se nos concentrarmos apenas em tarefas isoladas, como a alvenaria ou a instalação elétrica, podemos otimizar cada uma delas individualmente, mas o projeto como um todo pode sofrer. Por exemplo, se a equipe de elétrica chegar muito cedo para iniciar seu trabalho, enquanto a equipe de alvenaria ainda não concluiu sua parte, haverá um tempo de inatividade e recursos ociosos.
+
+**Visão fragmentada:**
+
+* **Foco:** Cada equipe trabalha de forma isolada, otimizando apenas suas tarefas.
+* **Problema:** A equipe de encanamento inicia seu trabalho antes que a estrutura esteja completamente pronta, causando atrasos e retrabalhos.
+
+**Visão da mineração de processos:**
+
+* **Foco:** O processo de construção como um todo, desde a concepção do projeto até a entrega da obra.
+* **Solução:** Criação de um cronograma detalhado, com todas as etapas interligadas e prazos bem definidos. As equipes são informadas sobre as dependências entre as tarefas, evitando atrasos e otimizando o uso de recursos.
+
+**Benefícios da visão de mineração de processos na construção civil:**
+
+* **Redução de custos:** Minimização de retrabalhos, otimização do uso de materiais e redução de tempo de obra.
+* **Melhora da qualidade:** Aumento da precisão e da qualidade do trabalho, com menos erros e defeitos.
+* **Aumento da produtividade:** Melhor coordenação entre as equipes, redução de interrupções e otimização do fluxo de trabalho.
+* **Maior satisfação do cliente:** Entrega do projeto dentro do prazo e com a qualidade esperada.
