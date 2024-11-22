@@ -25,6 +25,13 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 ![internet of events](../img/aula01_intro/InternetEvents.png)
 
 <div style="text-align: center; background-color: white;">
+  <span style="color: blue; font-weight: bold;">Evolução na forma de criação e manipulação de fotos</span>
+</div>
+
+![alt text](../img/aula01_intro/fotoEvol.png)
+
+
+<div style="text-align: center; background-color: white;">
   <span style="color: blue; font-weight: bold;">Frequentemente, estamos gerando dados de eventos</span>
 </div>
 
@@ -85,17 +92,28 @@ Outro exemplo é o uso de **sensores IoT** em canteiros de obras, que geram dado
 
 Esses avanços proporcionam maior previsibilidade, redução de riscos e uma gestão mais eficaz em grandes projetos de construção civil.
 
-## Manipulação de dados
+## Visão de dados
 
 ![alt text](../img/aula01_intro/planilhaDados.png)
 
-As planilhas podem ser usadas para fazer qualquer coisa com números, mas têm dificuldades em capturar adequadamente o comportamento dinâmico
+As planilhas podem ser usadas para fazer qualquer coisa com números, mas têm dificuldades em capturar adequadamente o comportamento dinâmico.
 
-## Visão do processo global
+## Visão de processo
 
 ![alt text](../img/aula01_intro/procEstupido.png)
 
 Van der Aalst critica a abordagem que foca apenas em padrões ou decisões isoladas, pois acredita que o verdadeiro valor está em entender e otimizar o processo de ponta a ponta. Ele considera "estúpido" tratar processos como uma coleção desconexa de boas práticas ou intervenções pontuais, pois isso ignora a eficiência global e os impactos no resultado final. Um processo pode ter partes otimizadas, mas se o fluxo completo não funcionar bem, o desempenho geral será comprometido. O foco em processos de ponta a ponta é essencial para alinhar eficiência local e global, gerando melhores resultados.
+
+## Visão da mineração de processos
+
+O comportamento dinâmico precisa estar relacionado a modelos de processo. Portanto, Aalst (2016) refere a isso como "ciência de dados em ação".
+
+
+Exemplos de aplicações incluem:
+analisar processos de tratamento em hospitais, melhorar processos de atendimento ao cliente
+em uma corporação multinacional, entender o comportamento de navegação de clientes
+usando um site de reservas, analisar falhas de um sistema de manuseio de bagagem e melhorar a interface do usuário de uma máquina de raio-X. 
+
 
 ## Exemplo na Construção Civil
 
@@ -117,3 +135,8 @@ Imagine a construção de um prédio. Se nos concentrarmos apenas em tarefas iso
 * **Melhora da qualidade:** Aumento da precisão e da qualidade do trabalho, com menos erros e defeitos.
 * **Aumento da produtividade:** Melhor coordenação entre as equipes, redução de interrupções e otimização do fluxo de trabalho.
 * **Maior satisfação do cliente:** Entrega do projeto dentro do prazo e com a qualidade esperada.
+
+
+## Referências
+
+- VAN DER AALST, Wil. **Process Mining**: Data science in action. Springer Berlin Heidelberg, 2016.

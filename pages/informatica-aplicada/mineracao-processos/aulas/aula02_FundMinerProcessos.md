@@ -6,7 +6,20 @@ layout: default
 
 ## Mineração de Processos
 
+
+![alt text](../img/aula01_intro/ponteMinProc.png)
+
+
+
+![missing link](../img/aula01_intro/missing_link.png)
+
+A mineração de processos reúne a análise de processos tradicional baseada em modelos e
+técnicas de análise centradas em dados. A mineração de processos busca o confronto entre dados de eventos (ou seja, comportamento observado) e modelos de processos (feitos à mão ou descobertos automaticamente). As abordagens tradicionais da ciência de dados tendem a
+ser agnósticas em relação a processos. Mineração de dados, estatística e técnicas de aprendizado de máquina
+não consideram modelos de processos de ponta a ponta.
+
 A **mineração de processos**, ou **process mining**, é um área que combina **modelos de processos de négocio** com a Ciência de Dados, ou seja, a partir de event logs ocorre a extração do modelo dos processos ou a análise de desempenho, gargalos, conformidade e etc.
+
 
 Desse modo, a mineração de processos é um elo crucial entre a ciência de dados, que lida com a análise e interpretação dos dados, e o estudo de processos, que foca na melhoria contínua e na eficiência organizacional. Ao aplicar métodos de análise avançada, como aprendizado de máquina e visualização de dados, ela proporciona uma visão detalhada e realista de como os processos funcionam, ajudando as empresas a otimizá-los com base em dados reais.
 
@@ -15,9 +28,6 @@ Process mining seeks the confrontation between event data (i.e., observed behavi
 related to explicit process models, e.g., Petri nets or BPMN models. For example, process models are discovered from event data or event data are replayed on
 models to analyze compliance and performance" (van der Aalst, 2016).
 
-![alt text](../img/aula01_intro/ponteMinProc.png)
-
-![missing link](../img/aula01_intro/missing_link.png)
 
 ![process mining model](../img/aula01_intro/process_mining_model.png)
 
@@ -33,16 +43,14 @@ models to analyze compliance and performance" (van der Aalst, 2016).
 **Em resumo,** ao adotar uma visão de ponta a ponta, as empresas de construção podem otimizar seus processos, reduzir custos, melhorar a qualidade e aumentar a satisfação dos clientes. A ideia de van der Aalst de que "o processo é estúpido" serve como um lembrete de que a eficiência e a qualidade de um projeto dependem da otimização do processo como um todo, e não apenas de cada tarefa individual.-->
 
 
-## **Como aplicar a ideia na prática:**
+## **Levantamento de requisitos do processo**
 
-Para aplicar mineração de processos em um caso de uso específico, é essencial fazer perguntas que ajudem a entender o contexto, os objetivos e os dados disponíveis. Essas perguntas podem ser divididas em três categorias principais: entendimento do processo, definição de objetivos e dados e ferramentas. 
-
-Para aplicar **mineração de processos** em um caso de uso específico, é essencial fazer perguntas que ajudem a entender o contexto, os objetivos e os dados disponíveis. Essas perguntas podem ser divididas em três categorias principais: **entendimento do processo**, **definição de objetivos** e **dados e ferramentas**. Aqui estão as principais perguntas:
+Para aplicar mineração de processos em um caso de uso específico, é essencial entender o contexto, os objetivos e os dados disponíveis. O levantamento de requisitos pode ser dividido em: entendimento do processo, definição de objetivos e dados e ferramentas. Aqui estão algumas sugestões para esse levantamento:
 
 ---
 
 ### 1. **Entendimento do Processo**
-Essas perguntas ajudam a mapear o contexto e o funcionamento do processo:
+Neste item, deve-se mapear o contexto e o funcionamento do processo. Para tanto, deve-se buscar respostas para:
 - **Qual é o processo que será analisado?**
   - Exemplo: É um processo de vendas, atendimento ao cliente, produção, etc.?
 - **Quais são as entradas, atividades e saídas do processo?**
@@ -57,7 +65,7 @@ Essas perguntas ajudam a mapear o contexto e o funcionamento do processo:
 ---
 
 ### 2. **Definição de Objetivos**
-Perguntas para identificar o que a mineração de processos deve alcançar:
+Para identificar o que a mineração de processos deve alcançar, deve-se questionar:
 - **Qual problema específico estamos tentando resolver?**
   - Exemplo: Reduzir atrasos, eliminar gargalos, ou melhorar a qualidade?
 - **Quais indicadores de desempenho (KPIs) devem ser analisados?**
@@ -72,7 +80,7 @@ Perguntas para identificar o que a mineração de processos deve alcançar:
 ---
 
 ### 3. **Dados e Ferramentas**
-Perguntas para garantir que os dados necessários estão disponíveis e que as ferramentas corretas serão usadas:
+Para garantir que os dados necessários estão disponíveis e que as ferramentas corretas serão usadas, deve-se responder a:
 - **De onde vêm os dados do processo?**
   - Exemplo: Logs de sistemas ERP, CRM, sistemas de ticket, etc.
 - **Os dados contêm as informações mínimas necessárias?**
@@ -85,6 +93,13 @@ Perguntas para garantir que os dados necessários estão disponíveis e que as f
   - Exemplo: Gerentes de processo, analistas de negócio, TI.
 
 ---
+
+## Modelagem de processos
+Os modelos desempenham um papel importante para projetar processos e introduzir novos sistemas de informação. Normalmente, dois tipos de modelos são usados: (a) modelos informais e (b) modelos formais (também chamados de modelos “executáveis”). Os modelos informais são usados ​​para discussão e documentação, enquanto os modelos formais são usados ​​para análise ou execução real do processo.
+
+![alt text](../img/aula02_fund/redesPetri.png)
+
+![alt text](../img/aula02_fund/BPMN.png)
 
 ### Exemplo de Aplicação
 Suponha que você esteja analisando um processo de **aprovação de empréstimos em um banco**. As perguntas poderiam ser:
@@ -128,7 +143,6 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 | 9901                    | ship order     | 22-1-2014#10.11 | Sue Fox           | iPhone5s               | 1                       |
 | 9901                    | handle payment | 22-1-2014#10.41 | Carol Hope        | iPhone5s               | 1                       |
 
-<<<<<<< HEAD
 ## Analisar os processos
 
 ### Tipos de process mining
