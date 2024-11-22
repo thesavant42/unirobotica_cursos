@@ -39,8 +39,6 @@ Quando falamos de todos esses dados sendo gravados, estamos falando da **Interne
 ![sensoreamento](../img/aula01_intro/sensorCel.png)
 
 
-
-
 ### Big Data
 
 Hoje nós conseguimos criar e gravar uma enorme quantidade de dados. 
@@ -48,7 +46,6 @@ Hoje nós conseguimos criar e gravar uma enorme quantidade de dados.
 Para se ter uma ideia dessa evolução, pode-se citar **Lei de Moore** é a observação de que o número de transistores em circuitos integrados dobra aproximadamente a cada dois anos, o que resulta em um aumento exponencial na capacidade de processamento dos computadores. Proposta por Gordon Moore em 1965, essa tendência impulsionou a evolução da tecnologia por décadas. No entanto, à medida que os transistores se aproximam dos limites físicos, a Lei de Moore começa a desacelerar, desafiando a indústria a buscar novas soluções, como a computação quântica.
 
 <img src="https://raw.githubusercontent.com/UniRobotica/cursos/f43bebe0e13d531295682ed9acf7c242fcc072c2/pages/informatica-aplicada/mineracao-processos/img/aula01_intro/LeiMoore.jpg" alt="alt text" style="width: 100%;" />
-
 
 
 <div style="background-color: blue; color: white; text-align: center; padding: 10px; font-size: 20px; font-weight: bold;">
@@ -87,14 +84,23 @@ Outro exemplo é o uso de **sensores IoT** em canteiros de obras, que geram dado
 Esses avanços proporcionam maior previsibilidade, redução de riscos e uma gestão mais eficaz em grandes projetos de construção civil.
 
 
-
 ## Mineração de Processos
 
 A **mineração de processos**, ou **process mining**, é um área que combina **modelos de processos de négocio** com a Ciência de Dados, ou seja, a partir de event logs ocorre a extração do modelo dos processos ou a análise de desempenho, gargalos, conformidade e etc.
 
 Desse modo, a mineração de processos é um elo crucial entre a ciência de dados, que lida com a análise e interpretação dos dados, e o estudo de processos, que foca na melhoria contínua e na eficiência organizacional. Ao aplicar métodos de análise avançada, como aprendizado de máquina e visualização de dados, ela proporciona uma visão detalhada e realista de como os processos funcionam, ajudando as empresas a otimizá-los com base em dados reais.
 
+> "Process mining adds the process perspective to machine learning and data mining.
+Process mining seeks the confrontation between event data (i.e., observed behavior) and process models (hand-made or discovered automatically). Event data are
+related to explicit process models, e.g., Petri nets or BPMN models. For example, process models are discovered from event data or event data are replayed on
+models to analyze compliance and performance" (van der Aalst, 2016).
+
 ![alt text](../img/aula01_intro/ponteMinProc.png)
+
+![missing link](../img/aula01_intro/missing_link.png)
+
+![process mining model](../img/aula01_intro/process_mining_model.png)
+
 
 ### Event Logs
 
@@ -159,3 +165,9 @@ A partir delas podemos determinar o seguinte modelo:
 
 ### **Replay** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
+
+> "The third type of process mining is enhancement. Here, the idea is to extend or improve an existing process model using information about the actual process recorded in some event log. Whereas conformance checking measures the alignment between model and reality, this third type of process mining aims at changing or extending the a-priori model" (van der Aalst, 2016).
+
+## Referências
+
+- VAN DER AALST, Wil. **Process Mining**: Data science in action. Springer Berlin Heidelberg, 2016.
