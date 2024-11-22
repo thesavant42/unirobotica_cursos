@@ -4,12 +4,15 @@ title: "Fundamentos da Mineração de Processos"
 layout: default
 ---
 
+<<<<<<< HEAD
 ## Visão do processo global
 
 ![alt text](../img/aula02_fund/procEstupido.png)
 
 Van der Aalst critica a abordagem que foca apenas em padrões ou decisões isoladas, pois acredita que o verdadeiro valor está em entender e otimizar o processo de ponta a ponta. Ele considera "estúpido" tratar processos como uma coleção desconexa de boas práticas ou intervenções pontuais, pois isso ignora a eficiência global e os impactos no resultado final. Um processo pode ter partes otimizadas, mas se o fluxo completo não funcionar bem, o desempenho geral será comprometido. O foco em processos de ponta a ponta é essencial para alinhar eficiência local e global, gerando melhores resultados.
 
+=======
+>>>>>>> f739a2d4ce602f1c032b96b048c70b5bdc197815
 ## Mineração de Processos
 
  A **Mineração de Processos (Process Mining)** analisa dados reais para revelar como os processos realmente acontecem, corrigindo desvios e eliminando gargalos. Essa abordagem enfatiza que decisões e melhorias devem ser baseadas na jornada completa do processo, garantindo que cada etapa contribua para o objetivo final. 
@@ -17,9 +20,14 @@ Van der Aalst critica a abordagem que foca apenas em padrões ou decisões isola
 
 A **mineração de processos**, ou **process mining**, é um área que combina **modelos de processos de négocio** com a Ciência de Dados, ou seja, a partir de event logs ocorre a extração do modelo dos processos ou a análise de desempenho, gargalos, conformidade e etc.
 
-Desse modo, a mineração de processos é um elo crucial entre a ciência de dados, que lida com a análise e interpretação dos dados, e o estudo de processos, que foca na melhoria contínua e na eficiência organizacional. Ao aplicar métodos de análise avançada, como aprendizado de máquina e visualização de dados, ela proporciona uma visão detalhada e realista de como os processos funcionam, ajudando as empresas a otimizá-los com base em dados reais.
+> "Process mining adds the process perspective to machine learning and data mining.
+Process mining seeks the confrontation between event data (i.e., observed behavior) and process models (hand-made or discovered automatically). Event data are
+related to explicit process models, e.g., Petri nets or BPMN models. For example, process models are discovered from event data or event data are replayed on
+models to analyze compliance and performance" (van der Aalst, 2016).
 
-![alt text](../img/aula01_intro/ponteMinProc.png)
+![missing link](../img/aula01_intro/missing_link.png)
+
+![process mining model](../img/aula01_intro/process_mining_model.png)
 
 ## Exemplo na Construção Civil
 
@@ -126,9 +134,11 @@ Suponha que você esteja analisando um processo de **aprovação de empréstimos
 ### Definir event Logs
 
 **Event log** ou **registros de evento** são tabelas que contém as informações de execução dos processos. Nesta tabela, cada linha representa um evento e contém ao menos três colunas essenciais, sendo elas
+
 - case id - contém um identificador da instância do processo ao qual o evento pertence;
 - activity - a atividade que foi realizada no evento;
 - timestamp - a data e hora em que o evento ocorreu (inicio, fim ou outro marco temporal).
+
 podem também ter outras colunas, como resources, que indicam o recurso ou pessoa responsável pela execução da atividade, além de  quaisquer outras informações relevantes. Vale dizer que nem sempre a tabela contém uma única coluna de timestamp. Em alguns casos, pode haver colunas separadas para o início e o fim de cada evento.
 
 | _student name/caseId_ | _course name/activity_       | _exam date/timestamp_ | _mark/other data_ |
@@ -150,9 +160,13 @@ podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 | 9901                    | handle payment | 22-1-2014#10.41 | Carol Hope        | iPhone5s               | 1                       |
 
 
+<<<<<<< HEAD
 ## Analisar os processos
 
 ### Tipos de process mining
+=======
+### **Tipos de mineração de processo**
+>>>>>>> f739a2d4ce602f1c032b96b048c70b5bdc197815
 
 Na mineração de processos, os tipos Play-in, Play-out e Replay referem-se a diferentes maneiras de interagir com e analisar os processos dentro de um sistema.
 
@@ -188,3 +202,9 @@ A partir delas podemos determinar o seguinte modelo:
 
 ### **Replay** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
+
+> "The third type of process mining is enhancement. Here, the idea is to extend or improve an existing process model using information about the actual process recorded in some event log. Whereas conformance checking measures the alignment between model and reality, this third type of process mining aims at changing or extending the a-priori model" (van der Aalst, 2016).
+
+## Referências
+
+- VAN DER AALST, Wil. **Process Mining**: Data science in action. Springer Berlin Heidelberg, 2016.
