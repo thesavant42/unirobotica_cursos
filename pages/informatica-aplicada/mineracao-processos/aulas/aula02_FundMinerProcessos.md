@@ -1,6 +1,8 @@
 ---
 title: "Fundamentos da Mineração de Processos"
-layout: default
+permalink: "informatica-aplicada/fundamentos-mineracao-processos"
+references: pm_aula02
+layout: aula
 ---
 
 
@@ -166,8 +168,6 @@ Podem também ter outras colunas, como resources, que indicam o recurso ou pesso
 | 9901                    | handle payment | 22-1-2014#10.41 | Carol Hope        | iPhone5s               | 1                       |
 
 
-
-
 ---
 ### **Tipos de mineração de processo**
 
@@ -176,10 +176,26 @@ Na mineração de processos, os tipos Play-in, Play-out e Replay referem-se a di
 
 <img src="https://raw.githubusercontent.com/UniRobotica/cursos/refs/heads/gh-pages/pages/informatica-aplicada/mineracao-processos/img/aula01_intro/tiposMinProc.png" alt="alt text" style="width: 100%;" />
 
+#### **Play In / Descoberta**
+Neste tipo geramos um modelo de processo a partir de um event log. Existem diversos algoritmos que fazem isso. 
 
+> "The first type of process mining is discovery. A discovery technique takes an event log and produces a model without using any a-priori information. An example is the α-algorithm [157] that will be described in Chap. 6. This algorithm takes an event log and produces a Petri net explaining the behavior recorded in the log" (van der Aalst, 2016).
 
-####  **Play Out**
-A ideia é gerar um comportamento, event log, a partir de um modelo. Por exemplo, considere o modelo abaixo
+Por exemplo, considere a seguinte sequência de letras, onde cada letra representa um evento:
+- abdeg
+- adbeg
+- adbeh
+- abdeh
+A partir delas podemos determinar o seguinte modelo:
+
+![exe1](../img/aula01_intro/exe1.png)
+
+####  **Play Out / Conformidade**
+A ideia é gerar um comportamento, event log, a partir de um modelo. 
+
+> "The second type of process mining is conformance. Here, an existing process model is compared with an event log of the same process. Conformance checking can be used to check if reality, as recorded in the log, conforms to the model and vice versa" (van der Aalst, 2016).
+
+Por exemplo, considere o modelo abaixo
 
 ![exe1](../img/aula01_intro/exe1.png)
 
@@ -193,26 +209,11 @@ Podemos a partir desse modelo gerar o seguinte event log:
 | 235  | decide (e)                         | 19-8-2014:9.36 | Sue      |
 | 235  | accept request (g)                 | 19-8-2014.9.48 | Mary     |
 
-#### **Play In**
-Neste tipo geramos um modelo de processo a partir de um event log. Existem diversos algoritmos que fazem isso. Por exemplo, considere a seguinte sequência de letras, onde cada letra representa um evento:
-- abdeg
-- adbeg
-- adbeh
-- abdeh
-A partir delas podemos determinar o seguinte modelo:
-
-![exe1](../img/aula01_intro/exe1.png)
-
-### **Replay** 
+### **Replay / Aprimoramento** 
 Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de processos gerado ou já existente com a realidade. Desta forma podemos descobrir gargalos, processos sendo realizados fora de ordem, e outros desvios de desempenho.
 
 > "The third type of process mining is enhancement. Here, the idea is to extend or improve an existing process model using information about the actual process recorded in some event log. Whereas conformance checking measures the alignment between model and reality, this third type of process mining aims at changing or extending the a-priori model" (van der Aalst, 2016).
 
 ![alt text](../img/aula02_fund/tiposDiagr.png)
 
-## Referências
-
-- VAN DER AALST, Wil. **Process Mining**: Data science in action. Springer Berlin Heidelberg, 2016.
-- J. Desel, W. Reisig, and G. Rozenberg, editors. Lectures on Concurrency and Petri Nets,
-volume 3098 of Lecture Notes in Computer Science. Springer, Berlin, 2004.
-- OMG. Business Process Model and Notation (BPMN). Object Management Group, dtc/2010-06-05, 2010.
+| [Aula 01](aula01_MineracaoProcessos.md) |

@@ -1,0 +1,11 @@
+<div>
+    <h2>Referências</h2>
+
+    <ol>
+        {% for reference in site.data.references[page.references] offset:0 %}
+            <li>
+                {{ reference.author }}. <strong>{{ reference.title }}</strong>{% if reference.subtitle %}: {{reference.subtitle}}{% endif%}. {% if reference.local %}{{reference.local}}: {% endif%}{% if reference.publisher %}{{ reference.publisher }}{% endif %}{% if reference.year %}, {{ reference.year }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ol>
+</div>
