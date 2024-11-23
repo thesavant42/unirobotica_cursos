@@ -3,7 +3,7 @@
   title: Process Mining
   subtitle: Data science in action
   publisher: Springer
-  local: Berlin
+  city: Berlin
   year: 2016
 
 - label: petri_net
@@ -11,11 +11,11 @@
   title: Lectures on Concurrency and Petri Nets
   subtitle: volume 3098 of Lecture Notes in Computer Science
   publisher: Springer
-  local: Berlin
+  city: Berlin
   year: 2004
 
 - label: bpmn
   author: OMG
   title: Business Process Model and Notation (BPMN)
-  publisher: Object Management Group, dtc/2010-06-05
+  city: Object Management Group, dtc/2010-06-05
   year: 2010
