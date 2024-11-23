@@ -53,32 +53,30 @@ Hoje nós conseguimos criar e gravar uma enorme quantidade de dados.
 Para se ter uma ideia dessa evolução, pode-se citar **Lei de Moore** é a observação de que o número de transistores em circuitos integrados dobra aproximadamente a cada dois anos, o que resulta em um aumento exponencial na capacidade de processamento dos computadores. Proposta por Gordon Moore em 1965, essa tendência impulsionou a evolução da tecnologia por décadas. No entanto, à medida que os transistores se aproximam dos limites físicos, a Lei de Moore começa a desacelerar, desafiando a indústria a buscar novas soluções, como a computação quântica.
 
 ![alt text](../img/aula01_intro/LeiMoore.png)
-
-<div style="background-color: blue; color: white; text-align: center; padding: 10px; font-size: 20px; font-weight: bold;">
+<div style="background-color: blue; color: white; text-align: center; padding: 1px; font-size: 13px; font-weight: bold;">
   2²⁰ = 1.048.576 * em 40 anos
 </div>
-
-Portanto, o desafio hoje é encontrar valor nesses dados.
 
 ####  Os 4 desafios do Big Data
 
 ![alt text](../img/aula01_intro/BigData.png)
+Os desafios do Big Data são diversos e abrangem questões técnicas, organizacionais, legais e éticas. Entretanto, os principais desafios enfrentados são relacionados a:
+- Volume: devido ao tratamento de grandes quantidades de dados
+- Velocidade: devido a rapidez que os dados estão sendo criados e modificados
+- Variedade: devido a necessidade de trabalhar com dados que mudam de tipo e de fontes como imagens, textos, vídeos.
+- Veracidade: devido ao volume massivo de dados, pode existir uma dificuldade em verificar a confiabilidade dos dados
 
-- Volume: estamos criando grandes quantidades de dados
-- Velocidade: a rapidez que os dados estão sendo criados e modificados
-- Variedade: os dados não mudam apenas de tipo mas também de fontes como imagens, textos, vídeos, e devemos trabalhar com todos eles
-- Veracidade: por conta do volume massivo de dados, pode existir uma dificuldade em verificar a confiabilidade dos dados
+Entretanto, o maior desafio hoje é encontrar valor nesses dados.
 
 ## A demanda por cientistas de dados
+
+![data science](../img/aula01_intro/DataScience.png)
 
 A crescente demanda por cientistas de dados é impulsionada pela necessidade das empresas de transformar grandes volumes de dados em informações úteis para tomar decisões mais informadas e estratégicas. 
 
 Cientistas de dados aplicam técnicas de mineração de dados, como clustering, classificação, regressão e análise preditiva, para extrair padrões e insights de conjuntos de dados complexos. 
 
 Esses profissionais desempenham um papel fundamental na análise de dados não estruturados e estruturados, utilizando ferramentas e algoritmos sofisticados para transformar dados brutos em conhecimento acionável.
-
-### Ramos da Ciência de Dados
-![data science](../img/aula01_intro/DataScience.png)
 
 
 ### Exemplo na Construção Civil:
