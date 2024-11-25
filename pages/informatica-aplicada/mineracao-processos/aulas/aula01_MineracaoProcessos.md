@@ -136,3 +136,7 @@ Imagine a construção de um prédio. Se nos concentrarmos apenas em tarefas iso
 
 
 | [Aula 2](aula02_FundMinerProcessos.md) |
+
+| [Sumário](../../mineracaoProcessos.md) |
+
+

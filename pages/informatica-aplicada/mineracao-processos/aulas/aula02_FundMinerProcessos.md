@@ -217,3 +217,6 @@ Por fim, no tipo replay nos buscamos verificar a conformidade do modelo de proce
 ![alt text](../img/aula02_fund/tiposDiagr.png)
 
 | [Aula 01](aula01_MineracaoProcessos.md) |
+
+| [Sumário](../../mineracaoProcessos.md) |
+
