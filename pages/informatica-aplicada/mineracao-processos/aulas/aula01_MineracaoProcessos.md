@@ -1,7 +1,8 @@
 ---
 title: "Introdução à Mineração de Processos"
-permalink: "informatica-aplicada/mineracao-processos"
-layout: default
+permalink: "informatica-aplicada/introducao-mineracao-processos"
+references: pm_aula01
+layout: aula
 ---
 
 Nesta aula veremos um pouco sobre a mineração de processos, área essa que relaciona a modelagem de sistemas com a ciência de dados, permitindo transformar registros de eventos em melhorias para processos.  
@@ -134,6 +135,4 @@ Imagine a construção de um prédio. Se nos concentrarmos apenas em tarefas iso
 * **Maior satisfação do cliente:** Entrega do projeto dentro do prazo e com a qualidade esperada.
 
 
-## Referências
-
-- VAN DER AALST, Wil. **Process Mining**: Data science in action. Springer Berlin Heidelberg, 2016.
+| [Aula 2](aula02_FundMinerProcessos.md) |
