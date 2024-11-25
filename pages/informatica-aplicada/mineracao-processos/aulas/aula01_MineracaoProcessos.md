@@ -135,8 +135,8 @@ Imagine a construção de um prédio. Se nos concentrarmos apenas em tarefas iso
 * **Maior satisfação do cliente:** Entrega do projeto dentro do prazo e com a qualidade esperada.
 
 
-| [Aula 2](aula02_FundMinerProcessos.md) |
+| [Aula 2](aula02_FundMinerProcessos.md) 
 
-| [Sumário](../../mineracaoProcessos.md) |
+ [Sumário](../../mineracaoProcessos.md) |
 
 
