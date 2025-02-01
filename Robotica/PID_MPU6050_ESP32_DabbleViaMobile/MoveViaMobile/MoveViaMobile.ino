@@ -1,24 +1,27 @@
+Here is the translation of the comments in the code to English:
+
+```c++
 /*
- * Projeto: Controle de Carro Robô 2WD com ESP32 e MPU6050
- * Controle por giroscópio e acelerômetro do celular (Dabble)
+ * Project: 2WD Robot Car Control with ESP32 and MPU6050
+ * Control via gyroscope and accelerometer of the mobile phone (Dabble)
  */
 
 #include <Wire.h>
 #include <MPU6050.h>
 #include <DabbleESP32.h>
 
-// Configuração do MPU6050 e variáveis de yaw
+// MPU6050 configuration and yaw variables
 MPU6050 mpu;
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
 float currentYaw = 0;
 float targetYaw = 0;
 
-// Configuração do filtro
+// Filter configuration
 float alpha = 0.8;
 float filteredYaw = 0;
 
-// Configuração dos pinos do motor
+// Motor pin configuration
 const int motorRightPWM = 13;
 const int rightMotorPin1 = 25;
 const int rightMotorPin2 = 33;
@@ -26,12 +29,12 @@ const int motorLeftPWM = 32;
 const int leftMotorPin1 = 26;
 const int leftMotorPin2 = 27;
 
-// Configuração da velocidade
+// Speed configuration
 int baseMotorSpeedLeft = 50;
 int baseMotorSpeedRight = 50;
-int rotationSpeed = 30; // Variável para controlar a velocidade de rotação
+int rotationSpeed = 30; // Variable to control rotation speed
 
-// Variáveis PID
+// PID variables
 float KpLeft = 3.0, KiLeft = 0.1, KdLeft = 1.5;
 float KpRight = 3.0, KiRight = 0.1, KdRight = 1.5;
 float prevErrorYawLeft = 0;
@@ -45,16 +48,16 @@ float dt = 0.1;
 
 void setup() {
   Serial.begin(115200);
-  Dabble.begin("ESP32-Robo");  // Inicializa o Dabble com o nome do dispositivo
+  Dabble.begin("ESP32-Robo");  // Initialize Dabble with the device name
   
   Wire.begin();
   mpu.initialize();
   
   if (!mpu.testConnection()) {
-    Serial.println("Falha ao conectar ao MPU6050!");
+    Serial.println("Failed to connect to MPU6050!");
     while (1);
   } else {
-    Serial.println("MPU6050 conectado!");
+    Serial.println("MPU6050 connected!");
   }
 
   pinMode(rightMotorPin1, OUTPUT);
@@ -67,45 +70,45 @@ void setup() {
 }
 
 void loop() {
-  Dabble.processInput();  // Processa dados do Dabble
-  getSensorData();  // Função para coletar dados do sensor
+  Dabble.processInput();  // Process Dabble data
+  getSensorData();  // Function to collect sensor data
 
-  // Comando de movimento baseado nos dados do sensor
-  int tiltX = Sensor.getGyroscopeXaxis();  // Inclinação no eixo X
-  int tiltY = Sensor.getGyroscopeYaxis();  // Inclinação no eixo Y
+  // Movement command based on sensor data
+  int tiltX = Sensor.getGyroscopeXaxis();  // Tilt on the X-axis
+  int tiltY = Sensor.getGyroscopeYaxis();  // Tilt on the Y-axis
 
-  if (tiltY > 10) {  // Inclinação para frente
+  if (tiltY > 10) {  // Tilt forward
     moveForward();
-    targetYaw = currentYaw;  // Define o targetYaw como o currentYaw
+    targetYaw = currentYaw;  // Set targetYaw as currentYaw
     correctTrajectoryPID();
-  } else if (tiltY < -10) {  // Inclinação para trás
+  } else if (tiltY < -10) {  // Tilt backward
     moveBackward();
     targetYaw = currentYaw;
     correctTrajectoryPID();
-  } else if (tiltX > 10) {  // Inclinação para a direita
+  } else if (tiltX > 10) {  // Tilt to the right
     rotateRight();
-    targetYaw += 5;  // Ajusta o targetYaw para a direita
+    targetYaw += 5;  // Adjust targetYaw to the right
     correctRotationPID();
-  } else if (tiltX < -10) {  // Inclinação para a esquerda
+  } else if (tiltX < -10) {  // Tilt to the left
     rotateLeft();
-    targetYaw -= 5;  // Ajusta o targetYaw para a esquerda
+    targetYaw -= 5;  // Adjust targetYaw to the left
     correctRotationPID();
   } else {
-    stopMotors();  // Para os motores se não houver inclinação
+    stopMotors();  // Stop motors if there is no tilt
   }
 }
 
 void getSensorData() {
-  // Lê dados do MPU6050 e atualiza o yaw
+  // Read data from MPU6050 and update yaw
   mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
   
-  // Atualiza e filtra a leitura de yaw
-  float rawYaw = (gz / 131.0) * dt; // Raw yaw baseado na taxa de giroscópio
-  filteredYaw = alpha * filteredYaw + (1 - alpha) * rawYaw; // Filtro passa-baixa
+  // Update and filter yaw reading
+  float rawYaw = (gz / 131.0) * dt; // Raw yaw based on gyroscope rate
+  filteredYaw = alpha * filteredYaw + (1 - alpha) * rawYaw; // Low-pass filter
   currentYaw += filteredYaw;
   
-  // Impressão dos dados do acelerômetro usando a biblioteca Dabble
-  Serial.print("Acelerômetro - X: "); Serial.print(Sensor.getAccelerometerXaxis());
+  // Print accelerometer data using the Dabble library
+  Serial.print("Accelerometer - X: "); Serial.print(Sensor.getAccelerometerXaxis());
   Serial.print(", Y: "); Serial.print(Sensor.getAccelerometerYaxis());
   Serial.print(", Z: "); Serial.println(Sensor.getAccelerometerZaxis());
 }
@@ -138,7 +141,7 @@ void stopMotors() {
 void rotateRight() {
   digitalWrite(leftMotorPin1, LOW);
   digitalWrite(leftMotorPin2, HIGH);
-  analogWrite(motorLeftPWM, rotationSpeed);  // Usa rotationSpeed para a rotação
+  analogWrite(motorLeftPWM, rotationSpeed);  // Use rotationSpeed for rotation
 
   digitalWrite(rightMotorPin1, HIGH);
   digitalWrite(rightMotorPin2, LOW);
@@ -148,19 +151,19 @@ void rotateRight() {
 void rotateLeft() {
   digitalWrite(leftMotorPin1, HIGH);
   digitalWrite(leftMotorPin2, LOW);
-  analogWrite(motorLeftPWM, rotationSpeed);  // Usa rotationSpeed para a rotação
+  analogWrite(motorLeftPWM, rotationSpeed);  // Use rotationSpeed for rotation
 
   digitalWrite(rightMotorPin1, LOW);
   digitalWrite(rightMotorPin2, HIGH);
   analogWrite(motorRightPWM, rotationSpeed);
 }
 
-// Função para limitar o termo integral do PID (windup)
+// Function to limit the integral term of PID (windup)
 void limitIntegral(float &integralYaw) {
   integralYaw = constrain(integralYaw, -windupLimit, windupLimit);
 }
 
-// Função para corrigir a trajetória com PID
+// Function to correct the trajectory with PID
 void correctTrajectoryPID() {
   unsigned long currentTime = millis();
   dt = (currentTime - lastTime) / 1000.0;
@@ -204,7 +207,7 @@ void correctTrajectoryPID() {
   prevErrorYawRight = errorYaw;
 }
 
-// Função para corrigir a rotação com PID
+// Function to correct rotation with PID
 void correctRotationPID() {
   unsigned long currentTime = millis();
   dt = (currentTime - lastTime) / 1000.0;
@@ -226,16 +229,19 @@ void correctRotationPID() {
   int speedAdjustment = constrain(correctionYaw, -100, 100);
 
   if (speedAdjustment > 0) {
-    // Ajusta a velocidade do motor esquerdo
+    // Adjust left motor speed
     analogWrite(motorLeftPWM, baseMotorSpeedLeft - speedAdjustment);
-    // Motor direito permanece com a velocidade base
+    // Right motor remains at base speed
     analogWrite(motorRightPWM, baseMotorSpeedRight);
   } else {
-    // Motor esquerdo permanece com a velocidade base
+    // Left motor remains at base speed
     analogWrite(motorLeftPWM, baseMotorSpeedLeft);
-    // Ajusta a velocidade do motor direito
+    // Adjust right motor speed
     analogWrite(motorRightPWM, baseMotorSpeedRight + speedAdjustment);
   }
 
   prevErrorYawRight = errorYaw;
 }
+```
+
+Let me know if you need any further assistance.
