@@ -1,91 +1,92 @@
+Here is the translation of the README:
 
-# Carro Robô 2WD com ESP32 e MPU6050
+# 2WD Robot Car with ESP32 and MPU6050
 
-## Descrição
+## Description
 
-Este projeto utiliza um microcontrolador ESP32 e um sensor MPU6050 para controlar um carro robô de duas rodas (2WD) através do aplicativo Dabble via Bluetooth. O robô é capaz de seguir uma trajetória reta e fazer rotações incrementais, corrigindo sua direção em tempo real usando um algoritmo PID (Proporcional, Integral, Derivativo).
+This project uses an ESP32 microcontroller and an MPU6050 sensor to control a two-wheel drive (2WD) robot car via the Dabble app using Bluetooth. The robot is capable of following a straight path or making incremental rotations based on the received commands. The path control is performed using a PID (Proportional, Integral, Derivative) algorithm that corrects the direction based on the gyroscope data from the MPU6050, ensuring that the robot maintains its course, even when there is slippage.
 
-## Componentes Necessários
+## Required Components
 
 - **Hardware:**
   - 1 x ESP32
   - 1 x MPU6050
-  - 1 x Driver de Motor TB6612
-  - 2 x Motores DC
-  - 1 x Chassi para o robô
-  - Fios de conexão
+  - 1 x TB6612 Motor Driver
+  - 2 x DC Motors
+  - 1 x Chassis for the robot
+  - Connecting wires
 
 - **Software:**
   - Arduino IDE
-  - Biblioteca MPU6050 (disponível no gerenciador de bibliotecas do Arduino)
-  - Biblioteca Dabble (disponível no gerenciador de bibliotecas do Arduino)
+  - MPU6050 library (available in the Arduino library manager)
+  - Dabble library (available in the Arduino library manager)
 
-## Instalação
+## Installation
 
-### 1. Configurar o Ambiente de Desenvolvimento
+### 1. Set Up the Development Environment
 
-1. Baixe e instale a [Arduino IDE](https://www.arduino.cc/en/software).
-2. Abra a IDE e vá em **File** > **Preferences**.
-3. No campo "Additional Board Manager URLs", adicione: 
+1. Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
+2. Open the IDE and go to **File** > **Preferences**.
+3. In the "Additional Board Manager URLs" field, add:
    ```
    https://dl.espressif.com/dl/package_esp32_index.json
    ```
-4. Vá em **Tools** > **Board** > **Boards Manager** e busque por "ESP32". Instale a plataforma ESP32.
+4. Go to **Tools** > **Board** > **Boards Manager** and search for "ESP32". Install the ESP32 platform.
 
-### 2. Instalar Bibliotecas Necessárias
+### 2. Install Required Libraries
 
-1. Abra a IDE e vá em **Sketch** > **Include Library** > **Manage Libraries**.
-2. Busque e instale as seguintes bibliotecas:
-   - **MPU6050** (procure por "MPU6050 by Electronic Cats").
-   - **Dabble** (procure por "Dabble ESP32").
+1. Open the IDE and go to **Sketch** > **Include Library** > **Manage Libraries**.
+2. Search for and install the following libraries:
+   - **MPU6050** (look for "MPU6050 by Electronic Cats").
+   - **Dabble** (look for "Dabble ESP32").
 
-### 3. Montagem do Circuito
+### 3. Circuit Assembly
 
-Conecte os componentes conforme o seguinte esquema:
+Connect the components as per the following schematic:
 
 - **MPU6050:**
-  - VCC -> 3.3V do ESP32
-  - GND -> GND do ESP32
-  - SDA -> GPIO 21 (ou o pino SDA do ESP32)
-  - SCL -> GPIO 22 (ou o pino SCL do ESP32)
+  - VCC -> 3.3V on ESP32
+  - GND -> GND on ESP32
+  - SDA -> GPIO 21 (or the SDA pin on ESP32)
+  - SCL -> GPIO 22 (or the SCL pin on ESP32)
 
-- **Driver de Motor TB6612:**
-  - Pinos de controle conectados aos pinos definidos no código:
-    - Motor Direito: PWM -> GPIO 13, IN1 -> GPIO 25, IN2 -> GPIO 33
-    - Motor Esquerdo: PWM -> GPIO 32, IN1 -> GPIO 26, IN2 -> GPIO 27
-  - Alimente o driver com a tensão apropriada para os motores.
+- **TB6612 Motor Driver:**
+  - Control pins connected to the pins defined in the code:
+    - Right Motor: PWM -> GPIO 13, IN1 -> GPIO 25, IN2 -> GPIO 33
+    - Left Motor: PWM -> GPIO 32, IN1 -> GPIO 26, IN2 -> GPIO 27
+  - Power the driver with the appropriate voltage for the motors.
 
-### 4. Carregar o Código
+### 4. Upload the Code
 
-1. Copie o código fornecido (veja abaixo) e cole na Arduino IDE.
-2. Verifique se a placa ESP32 está selecionada em **Tools** > **Board**.
-3. Conecte o ESP32 ao computador via USB.
-4. Selecione a porta correta em **Tools** > **Port**.
-5. Clique em **Upload** para carregar o código no ESP32.
+1. Copy the provided code (see below) and paste it into the Arduino IDE.
+2. Ensure the ESP32 board is selected in **Tools** > **Board**.
+3. Connect the ESP32 to the computer via USB.
+4. Select the correct port in **Tools** > **Port**.
+5. Click **Upload** to load the code onto the ESP32.
 
-## Código
+## Code
 
 [PID_MPU6050_ESP32_Dabble.ino](https://github.com/UniRobotica/Cursos/blob/main/Robotica/PID_MPU6050_ESP32_Dabble/PID_MPU6050_ESP32_Dabble.ino)
 
-## Uso do Aplicativo Dabble
+## Using the Dabble App
 
-1. Baixe o aplicativo Dabble na Google Play Store ou Apple App Store.
-2. Abra o aplicativo e conecte-se ao dispositivo Bluetooth nomeado "ESP32-Robo".
-3. Use os botões no aplicativo para controlar o robô:
-   - **Seta para cima**: mover para frente
-   - **Seta para baixo**: mover para trás
-   - **Seta para a esquerda**: girar à esquerda
-   - **Seta para a direita**: girar à direita
+1. Download the Dabble app from the Google Play Store or Apple App Store.
+2. Open the app and connect to the Bluetooth device named "ESP32-Robo".
+3. Use the buttons in the app to control the robot:
+   - **Up Arrow**: move forward
+   - **Down Arrow**: move backward
+   - **Left Arrow**: turn left
+   - **Right Arrow**: turn right
 
-## Ajustes e Calibrações
+## Adjustments and Calibrations
 
-- Se o robô não seguir uma trajetória reta, ajuste as constantes PID no código.
-- Experimente alterar as velocidades base dos motores para encontrar a melhor configuração.
+- If the robot does not follow a straight path, adjust the PID constants in the code.
+- Experiment with changing the base speeds of the motors to find the best configuration.
 
-## Contribuições
+## Contributions
 
-Sinta-se à vontade para fazer melhorias ou relatar problemas. Contribuições são bem-vindas!
+Feel free to make improvements or report issues. Contributions are welcome!
 
-## Licença
+## License
 
-Este projeto é de código aberto. Sinta-se à vontade para usá-lo e modificá-lo conforme necessário.
+This project is open source. Feel free to use and modify it as needed.
